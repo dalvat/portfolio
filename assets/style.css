@@ -133,6 +133,7 @@ span{
 
 .socialMedia a{
     display: inline-flex;
+    vertical-align: middle;
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
@@ -140,25 +141,38 @@ span{
     padding: 2rem;
     width: 4rem;
     height: 4rem;
-    background: transparent;
     border: 0.25rem solid var(--accent-colour);
     border-radius: 50%;
     color: var(--accent-colour);
     transition: 0.5s ease;
 }
 
+.github{
+    font-size: 5rem;
+}
+
 .socialMedia a:hover{
     background-color: var(--accent-colour);
-    color: var(--background-colour-2);
+    color: var(--background-colour);
+}
+
+.socialMedia a:hover i::before{
+    font-size: 2.5rem;
+    content:"\eb3e";
+}
+
+.socialMedia a:hover .github::before{
+    vertical-align: 1rem;
 }
 
 .homeActions{
     display: inline-flex;
+    align-items: center;
 }
 
 .homeButton{
     padding: 1rem 2rem;
-    margin: 3rem;
+    margin: 1.5rem;
     border-radius: 3rem;
     background-color: var(--accent-colour);
     color: var(--background-colour-2);
