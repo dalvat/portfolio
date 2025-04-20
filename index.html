@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>David Salvat | Portfolio</title>
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style.css" />
+
+  </head>
+  <body>
+<!-- header section -->
+    <header class="header">
+        <a href="#" class="logo">D<span>a</span>v<span>i</span>d<span>.</span></a>
+        <i class="bx bx-menu" id="toggleMenu"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#experience">Experience</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#contact" class="contactButton">Contact</a>
+        </nav>
+    </header>
+<!-- home section -->
+        <section class="home" id="home">
+            <div class="profileImage">
+                <img src="./assets/images/home_image.png" alt="David">
+            </div>
+            <div class="homeContent">
+                <h3>Hello, I'm</h3>
+                <h1>David Salvat</h1>
+                <h3>and I'm a <span class="typedRoles"></span></h3>
+                <p>With a passion for precision and a keen eye for detail, I bring architectural and design concepts to life through accurate CAD drawings, detailed 3D models and immersive 3D visualisations. I enjoy turning ideas into precise digital assets and creating realistic visuals that give your projects a unique edge.</p>
+                <div class="homeActions">
+                    <div class="socialMedia">
+                    <a href="https://www.linkedin.com/in/david-salvat/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                    </div>
+                    <a href="#" class="homeButton">Download CV</a>
+                    <a href="#contact" class="homeButton">Get in touch</a>
+                </div>
+            </div>
+        </section>
+<!-- about section -->
+    <section class="about" id="about">
+        <div class="aboutImage">
+            <img src="./assets/images/about_image.png" alt="David">
+        </div>
+        <div class="aboutContent">
+            <h2>About <span>Me</span></h2>
+            <h3>CAD Specialist <span>|</span> 3D Modeler <span>|</span> 3D Visualiser</h3>
+            <p>I bring designs to life by creating realistic, high-impact visual content using tools like Blender and Twinmotion. I collaborate closely with my clients to understand their goals and turn ideas into compelling visual outputs that highlight the essence of each project.<br><br>Whether working from technical drawings, or building scenes from scratch without precise requirements, I combine accuracy with creative vision to produce detailed models that feel right in their context. From high-resolution images to immersive video walkthroughs, I focus on delivering polished media that provides clear design communication and presentation.<br><br>I also enjoy crafting natural environments including landscapes and vegetation, as well as man-made features such as roads, paths and artificial lighting to adding authenticity and atmosphere to every scene. My work blends precision with imagination to help clients showcase their ideas in the most engaging and visually compelling way.</p>
+            <a href="#contact" class="aboutButton">Hire Me</a>            
+        </div>
+    </section>
+<!-- services section -->
+    <section class="services" id="services">
+        <div class="servicesContent">
+            <h2>Services <span>Offered</span></h2>
+            <div class="servicesContainer">
+                <div class="servicesBox">
+                    <i class='bx bx-cross'></i>
+                    <h3>CAD Specialist</h3>
+                    <p>I offer a wide range of services tailored to support architectural, engineering, construction, and facilities management projects.</p>
+                    <a id="openModalOne" class="servicesButton">Read More</a>
+                </div>
+                <div class="servicesBox">
+                    <i class='bx bxl-blender'></i>
+                    <h3>3D Modeling</h3>
+                    <p>I offer 3D modeling services to create precise, detailed digital representations of architectural and engineering designs for visualization and analysis.</p>
+                    <a id="openModalTwo" class="servicesButton">Read More</a>
+                </div>
+                <div class="servicesBox">
+                    <i class='bx bx-landscape'></i>
+                    <h3>3D Visualisation</h3>
+                    <p>I offer 3D visualisation services to create realistic renders and immersive walkthroughs that bring your designs to life.</p>
+                    <a id="openModalThree" class="servicesButton">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- portfolio section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolioContent">
+            <h2>Latest <span>Projects</span></h2>
+            <div class="portfolioContainer">
+                <div class="portfolioBox">
+                    <img src="./assets/images/project1.jpeg" alt="Project 1">
+                    <div class="portfolioOverlay">
+                        <h4>Project 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a id="openModalFour"><i class='bx bx-plus'></i></a>
+                    </div>
+                </div>
+                <div class="portfolioBox">
+                    <img src="./assets/images/project2.jpeg" alt="Project 2">
+                    <div class="portfolioOverlay">
+                        <h4>Project 2</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a id="openModalFive"><i class='bx bx-plus'></i></a>
+                    </div>
+                </div>
+                <div class="portfolioBox">
+                    <img src="./assets/images/project3.jpeg" alt="Project 3">
+                    <div class="portfolioOverlay">
+                        <h4>Project 3</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a id="openModalSix"><i class='bx bx-plus'></i></a>
+                    </div>
+                </div>
+                <div class="portfolioBox">
+                    <img src="./assets/images/project4.jpeg" alt="Project 4">
+                    <div class="portfolioOverlay">
+                        <h4>Project 4</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a id="openModalSeven"><i class='bx bx-plus'></i></a>
+                    </div>
+                </div>
+                <div class="portfolioBox">
+                    <img src="./assets/images/project5.jpeg" alt="Project 5">
+                    <div class="portfolioOverlay">
+                        <h4>Project 5</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a id="openModalEight"><i class='bx bx-plus'></i></a>
+                    </div>
+                </div>
+                <div class="portfolioBox">
+                    <img src="./assets/images/project6.jpeg" alt="Project 6">
+                    <div class="portfolioOverlay">
+                        <h4>Project 6</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <a id="openModalNine"><i class='bx bx-plus'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- experience section -->
+ <section class="experience" id="experience">
+    <div class="experienceContent">
+        <h2 class="experienceHeading">Professional <span>Experience</span>
+        <h3 class="experienceLink">Full details on my <a href="https://www.linkedin.com/in/david-salvat/" target="_blank">LinkedIn</a> profile.</h3>
+        <div class="timeline">
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content left">
+                        <h3>3D Modeling & Unreal Engine Support</h3>
+                        <h4>OnePlan Ltd.</h4>
+                        <p>Working as a contractor to create 3D models and assets from design drawings as well as modifying and updating existing 3D digital twin models and assets for venues of the 2024 Paris Olympics and Paralympic Games and 2026 Winter Olympic Games in Milano Cortina using Unreal Engine, Blender, 3DS Max and other 3D modelling software.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Feb 2025 - Present</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left">
+                        <h4>Jan 2025 - Present</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDetails bx">
+                    <div class="leftArrow"></div>
+                    <div class="content right">
+                        <h3>3D Modeler & Visualiser</h3>
+                        <h4>Freelance</h4>
+                        <p>I bring designs to life by creating realistic, high-impact visual content using tools like Blender and Twinmotion. I collaborate closely with clients to understand their goals and turn ideas into compelling visual outputs that highlight the essence of each project.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content  left">
+                        <h3>3D Modeling & Unreal Engine Support</h3>
+                        <h4>OnePlan Ltd.</h4>
+                        <p>Working as a contractor to create 3D models and assets from design drawings as well as modifying and updating existing 3D digital twin models and assets for venues of the 2024 Paris Olympics and Paralympic Games using Unreal Engine 4, Blender and other 3D modelling software.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Dec 2023 - May 2024</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left study">
+                        <h4>Dec 2023 - Mar 2024</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineStudy bx">
+                    <div class="leftArrowStudy"></div>
+                    <div class="content study right">
+                        <h3>Frontend Web Development</h3>
+                        <h4>edX Coding Bootcamp</h4>
+                        <p>Full-time coding bootcamp where I learnt to code in HTML, CSS, JavaScript, and gained hands-on experience with Bootstrap, Node.js, and React.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content left">
+                        <h3>CAD Consultant</h3>
+                        <h4>University of Oxford</h4>
+                        <p>Working as a consultant to provide specialist CAD services. Producing technical drawings, general arrangement floorplans, lease plans and ownership plans as well as UK Land Registry and Ordnance Survey compliant mapping solutions.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Aug 2021 - Present</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left study">
+                        <h4>June 2019</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineStudy bx">
+                    <div class="leftArrowStudy"></div>
+                    <div class="content study right">
+                        <h3>AutoCAD Certified Professional</h3>
+                        <h4>Autodesk University</h4>
+                        <p>I earned professional accreditation of my comprehensive skills and knowledge of the AutoCAD application with a score of 87.1%.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content left">
+                        <h3>CAD / BIM Technician</h3>
+                        <h4>University of Oxford</h4>
+                        <p>Responsible for managing and maintaining accurate CAD, BIM and GIS records for all properties within the University's diverse estate. This involved regular measured building surveys using 3D laser scanners as well as traditional methods.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Apr 2014 - May 2021</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left">
+                        <h4>Sep 2012 - Aug 2014</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDetails bx">
+                    <div class="leftArrow"></div>
+                    <div class="content right">
+                        <h3>Clerk to the Governing Body</h3>
+                        <h4>Oxfordshire County Council</h4>
+                        <p>I provided administration and governance services to numerous governing bodies of primary and secondary schools across Oxfordshire.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content left">
+                        <h3>Executive Assistant</h3>
+                        <h4>Oxfordshire County Council</h4>
+                        <p>I provided research, project coordination and governance services to project teams, as well as administration services for senior management.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Dec 2011 - Mar 2014</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left  study">
+                        <h4>Sep 2011 - Jun 2013</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineStudy bx">
+                    <div class="leftArrowStudy"></div>
+                    <div class="content study right">
+                        <h3>Advanced Level Apprenticeship</h3>
+                        <h4>Basingstoke ITEC</h4>
+                        <p>Part-time study alongside my full-time job. I obtained a Level 3 Diploma for 3 areas of study Professional ICT Competence, ICT Systems & Principles and IT Software Web & Telecoms Professionals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content left">
+                        <h3>IT Apprentice</h3>
+                        <h4>Oxfordshire County Council</h4>
+                        <p>Working with the organisation's Electronic Document and Records Management System (EDRMS) to cleanse data and supporting end users of IT systems through a Customer Relationship Management (CRM) System.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Jun 2011 - Dec 2011</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left study">
+                        <h4>Sep 2007 - Jun 2009</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineStudy bx">
+                    <div class="leftArrowStudy"></div>
+                    <div class="content study right">
+                        <h3>Building Services Engineering</h3>
+                        <h4>City of Westminster College</h4>
+                        <p>Part-time study alongside my full-time job. I obtained a Higher National Certificate in Building Services Engineering (Electrical).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry left">
+                <div class="timelineDetails bx">
+                    <div class="content left">
+                        <h3>Assistant Electrical Engineer</h3>
+                        <h4>CBG Consultants Ltd.</h4>
+                        <p>I produced electrical system design drawings including layout plans, elevations, sections and schematics as well as for telecoms, security and fire alarms systems. I created complex 3D models for lighting design calculations. I conducted regular site visits to inspect the progress of installations and to resolve issues.</p>
+                    </div>
+                    <div class="rightArrow"></div>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDate">
+                        <h4>Mar 2007 - Nov 2009</h4>
+                </div>
+            </div>
+            <div class="timelineSpacer">
+                <div class="centerLine"></div>
+            </div>
+            <div class="timelineEntry right">
+                <div class="timelineDate left">
+                        <h4>Jan 2007 - Mar 2007</h4>
+                </div>
+                <div class="timelineCenter">
+                    <div class="centerLine"></div>
+                </div>
+                <div class="timelineDetails bx">
+                    <div class="leftArrow"></div>
+                    <div class="content right">
+                        <h3>Sales Assistant</h3>
+                        <h4>City Electrical Factors</h4>
+                        <p>I was a warehouse operative and sales assistant at an electrical wholesalers. Processing customer orders in person and through the online ordering system.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timelineSpacerLong">
+                <div class="centerLine">
+                    <i class='bx bxs-square'></i>
+                    <i class='bx bxs-square'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+<!-- hobbies section -->
+<section class="hobbies" id="hobbies">
+    <div class="hobbiesImage">
+        <img src="./assets/images/triathlon.png" alt="David">
+    </div>
+    <div class="hobbiesContent">
+        <h2 class="hobbiesHeading">My <span>Hobbies</span></h2>
+        <p>In my spare time, I enjoy keeping my frontend web development skills up to date and exploring new tools and technologies. I built this website myself as a personal project to apply what I've learned and continue improving my coding abilities. It's something I find both challenging and rewarding, and I'm always looking for ways to enhance and refine it.<br><br>When I'm not at my desk, you'll usually find me outdoors - swimming, running, or hiking in the mountains near our house. A few years ago, I took on some intense training and completed three triathlons - including at Blenheim Palace - as well as the Reading Half Marathon. Staying active helps me recharge and stay focused. I'm also a big sports fan and enjoy watching events both on TV and in person, especially Formula One, rugby, and football. Whether I'm exploring a trail or watching a match, I love the energy and inspiration these experiences bring.
+            
+            </p>
+    </div>
+</section>
+<!-- contact section -->
+    <section class="contact" id="contact">
+        <h2 class="contactHeading">Contact <span>Me</span></h2>
+        <form action="#">
+            <div class="inputBox">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Subject">
+                <input class="numberField" type="number" placeholder="Contact Number">
+            </div>
+            </div>
+            <div class="inputBox">
+                <textarea name="userMessage" id="userMessage" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            </div>
+            <input type="submit" value="Send Message" class="sendButton">
+        </form>
+    </section>
+<!-- footer -->
+ <footer class="footer">
+    <div class="footerText">
+        <p>Copyright &copy; 2025 by David Salvat | All Rights Reserved</p>
+    </div>
+    <div class="backToTop">
+        <a href="#home"><i class='bx bx-arrow-to-top'></i></a>
+    </div>
+ </footer>
+ <!-- services modals -->
+<div id="modalContainerOne" class="modalContainer">
+    <div class="modal">
+        <i class='bx bx-cross'></i>
+        <h1 class="modalTitle">CAD Specialist</h1>
+        <p class="modalText">With over 12 years experience working with various CAD applications, my expertise include:<br><br><b>Technical Drawing & Drafting:</b><br>Creation of accurate CAD drawings, including floorplans, lease and ownership plans, M&E layouts, and UK Land Registry-compliant plans to support planning applications.<br><br><b>Surveying & Data Capture:</b><br>Conducting measured building surveys to accurately capture all architectural details and building services, ensuring the production of precise plans that reflect all captured elements.<br><br><b>CAD File Optimisation:</b><br>Streamlining CAD files for improved performance, reviewing and correcting inconstencies.<br><br><b>Technical Support:</b><br>Providing technical support for CAD applications, with hands-on experience in AutoCAD, AutoCAD Map3D and Autodesk Fusion for both drafting and CAD/CAM workflows.</p>
+        <a id="closeModalOne" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerTwo" class="modalContainer">
+    <div class="modal">
+        <i class='bx bxl-blender'></i>
+        <h1 class="modalTitle">3D Modeling</h1>
+        <p class="modalText">As a 3D Modeler, I specialize in creating, modifying, and refining detailed models and assets for large-scale, high-profile projects, including Olympic Games venues. I work with industry-standard tools such as Unreal Engine, Blender, and 3DS Max to develop accurate and visually rich 3D environments that support event planning, visualisation, and real-time simulation.<br><br>My strong background in CAD allows me to interpret complex technical drawings and accurately extract key details and dimensions to ensure all modeled elements are placed with precision. This includes creating internal architectural  layouts such as walls, doors, floor slabs, ramps, and stairs within existing models to match real-world conditions and design intent.<br><br>I'm experienced in overlaying 2D plans onto existing 3D geometry to identify and correct inconsistencies, ensuring models are not only visually realistic but also technically sound. Whether building from scratch or refining existing assets, I focus on delivering clean, optimized models that are ready for integration into larger workflows and platforms.</p>
+        <a id="closeModalTwo" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerThree" class="modalContainer">
+    <div class="modal">
+        <i class='bx bx-landscape'></i>
+        <h1 class="modalTitle">3D Visualisation</h1>
+        <p class="modalText">As a 3D Visualiser, I create high-quality, realistic visuals and immersive walkthroughs that bring architectural and design concepts to life. Drawing on my expertise in 3D modeling, CAD and rendering tools, I transform technical drawings and models into compelling visual content that communicates ideas clearly and powerfully.<br><br>I produce still renders and animated walkthrough videos tailored for presentations, planning submissions, client pitches, or marketing materials. My visualisations are designed to reflect real-world materials, lighting, and spatial context - helping clients, stakeholders, and teams better understand and engage with a project long before construction begins.<br><br>Using tools such as Blender, 3DS Max, Twinmotion, and Photoshop, I focus on clarity, realism and atmosphere to ensure each scene accurately represents the intent and quality of the design. Whether for architecture, interiors, or external environments, I deliver visuals that inform, impress, and inspire.</p>
+        <a id="closeModalThree" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<!-- projects modals -->
+<div id="modalContainerFour" class="modalContainer">
+    <div class="modal">
+        <img src="./assets/images/project1.jpeg" alt="Project 1">
+        <h1 class="modalTitle">Project 1</h1>
+        <p class="modalText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dicta aliquam accusamus ut repellat autem nam odio distinctio in eum praesentium consectetur provident eligendi tenetur, quam ad itaque laudantium quae!</p>
+        <a id="closeModalFour" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerFive" class="modalContainer">
+    <div class="modal">
+        <img src="./assets/images/project2.jpeg" alt="Project 2">
+        <h1 class="modalTitle">Project 2</h1>
+        <p class="modalText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dicta aliquam accusamus ut repellat autem nam odio distinctio in eum praesentium consectetur provident eligendi tenetur, quam ad itaque laudantium quae!</p>
+        <a id="closeModalFive" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerSix" class="modalContainer">
+    <div class="modal">
+        <img src="./assets/images/project3.jpeg" alt="Project 3">
+        <h1 class="modalTitle">Project 3</h1>
+        <p class="modalText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dicta aliquam accusamus ut repellat autem nam odio distinctio in eum praesentium consectetur provident eligendi tenetur, quam ad itaque laudantium quae!</p>
+        <a id="closeModalSix" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerSeven" class="modalContainer">
+    <div class="modal">
+        <img src="./assets/images/project4.jpeg" alt="Project 4">
+        <h1 class="modalTitle">Project 4</h1>
+        <p class="modalText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dicta aliquam accusamus ut repellat autem nam odio distinctio in eum praesentium consectetur provident eligendi tenetur, quam ad itaque laudantium quae!</p>
+        <a id="closeModalSeven" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerEight" class="modalContainer">
+    <div class="modal">
+        <img src="./assets/images/project5.jpeg" alt="Project 5">
+        <h1 class="modalTitle">Project 5</h1>
+        <p class="modalText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dicta aliquam accusamus ut repellat autem nam odio distinctio in eum praesentium consectetur provident eligendi tenetur, quam ad itaque laudantium quae!</p>
+        <a id="closeModalEight" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<div id="modalContainerNine" class="modalContainer">
+    <div class="modal">
+        <img src="./assets/images/project6.jpeg" alt="Project 6">
+        <h1 class="modalTitle">Project 6</h1>
+        <p class="modalText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dicta aliquam accusamus ut repellat autem nam odio distinctio in eum praesentium consectetur provident eligendi tenetur, quam ad itaque laudantium quae!</p>
+        <a id="closeModalNine" class="modalButton"><i class='bx bx-x'></i></a>
+    </div>
+</div>
+<!-- javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./assets/script.js"></script>
+
+  </body>
+</html>
