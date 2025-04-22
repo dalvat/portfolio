@@ -143,26 +143,25 @@ span{
     height: 4rem;
     border: 0.25rem solid var(--accent-colour);
     border-radius: 50%;
-    color: var(--accent-colour);
-    transition: 0.5s ease;
-}
-
-.github{
-    font-size: 5rem;
-}
-
-.socialMedia a:hover{
-    background-color: var(--accent-colour);
     color: var(--background-colour);
+    transition: 0.5s ease;
+    background-color: var(--accent-colour);
+}
+.socialMedia a:hover{
+    background-color: var(--background-colour);
+    color: var(--accent-colour);
 }
 
-.socialMedia a:hover i::before{
-    font-size: 2.5rem;
-    content:"\eb3e";
+.socialMedia a .git2{
+    display: none;
 }
 
-.socialMedia a:hover .github::before{
-    vertical-align: 1rem;
+.socialMedia a:hover .git1{
+    display: none;
+}
+
+.socialMedia a:hover .git2{
+    display: block;
 }
 
 .homeActions{
@@ -170,12 +169,16 @@ span{
     align-items: center;
 }
 
+.socialMedia img{
+    height: 2.5rem;
+}
+
 .homeButton{
     padding: 1rem 2rem;
-    margin: 1.5rem;
+    margin: 1.25rem;
     border-radius: 3rem;
     background-color: var(--accent-colour);
-    color: var(--background-colour-2);
+    color: var(--background-colour);
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
@@ -184,7 +187,7 @@ span{
 }
 
 .homeButton:hover{
-    background-color: var(--background-colour-2);
+    background-color: var(--background-colour);
     color: var(--accent-colour);
 }
 

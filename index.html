@@ -9,6 +9,7 @@
     <title>David Salvat | Portfolio</title>
 
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
 
   </head>
@@ -39,10 +40,13 @@
                 <p>With a passion for precision and a keen eye for detail, I bring architectural and design concepts to life through accurate CAD drawings, detailed 3D models and immersive 3D visualisations. I enjoy turning ideas into precise digital assets and creating realistic visuals that give your projects a unique edge.</p>
                 <div class="homeActions">
                     <div class="socialMedia">
-                        <a href="https://www.linkedin.com/in/david-salvat/" target="_blank" data-toggle="tooltip" title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-                        <a href="https://github.com/dalvat" target="_blank" data-toggle="tooltip" title="GitHub"><i class='bx bxl-github github'></i></a>
+                        <a href="https://www.linkedin.com/in/david-salvat/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+                        <a href="https://github.com/dalvat" target="_blank">
+                            <img class="git1" src="./assets/images/git-brands-2.svg" alt="GitHub"></img>
+                            <img class="git2" src="./assets/images/git-brands.svg" alt="GitHub"></img>
+                        </a>
                     </div>
-                        <a href="#" class="homeButton">My CV</a>
+                        <a href="https://www.dropbox.com/scl/fi/19tuh72des4w37gp0gj5k/David-Salvat-CV.pdf?rlkey=794ipv05f0ooufwppar7wht46&st=zd20xi97&dl=0" target="_blank" class="homeButton">My CV</a>
                         <a href="#contact" class="homeButton">Contact Me</a>
                     </div>
                 </div>
@@ -435,18 +439,18 @@
 <!-- contact section -->
     <section class="contact" id="contact">
         <h2 class="contactHeading">Contact <span>Me</span></h2>
-        <form action="#">
+        <form action="https://formspree.io/f/manoyyzr" method="post">
             <div class="inputBox">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Full Name" name="Full Name" required autocomplete="off">
+                <input type="email" placeholder="Email Address" name="Email Address" required autocomplete="off">
             </div>
             <div class="inputBox">
-                <input type="text" placeholder="Subject">
-                <input class="numberField" type="number" placeholder="Contact Number">
+                <input type="text" placeholder="Subject" name="Subject" autocomplete="off">
+                <input class="numberField" type="number" placeholder="Contact Number" name="Contact Number" autocomplete="off">
             </div>
             </div>
             <div class="inputBox">
-                <textarea name="userMessage" id="userMessage" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <textarea name="userMessage" id="userMessage" cols="30" rows="10" placeholder="Your Message" name="Message" autocomplete="off" required></textarea>
             </div>
             <input type="submit" value="Send Message" class="sendButton">
         </form>
