@@ -73,58 +73,122 @@ const closeModalSeven = document.querySelector('#closeModalSeven');
 const closeModalEight = document.querySelector('#closeModalEight');
 const closeModalNine = document.querySelector('#closeModalNine');
 
+const modalOne = document.querySelector('.modal.one');
+const modalTwo = document.querySelector('.modal.two');
+const modalThree = document.querySelector('.modal.three');
+const modalFour = document.querySelector('.modal.four');
+const modalFive = document.querySelector('.modal.five');
+const modalSix = document.querySelector('.modal.six');
+const modalSeven = document.querySelector('.modal.seven');
+const modalEight = document.querySelector('.modal.eight');
+const modalNine = document.querySelector('.modal.nine');
+
 openModalOne.onclick = () => {
+    modalOne.classList.remove('slideout');
     containerOne.classList.add('show');
+    modalOne.classList.add('slidein');
 }
 openModalTwo.onclick = () => {
+    modalTwo.classList.remove('slideout');
     containerTwo.classList.add('show');
+    modalTwo.classList.add('slidein');
 }
 openModalThree.onclick = () => {
+    modalThree.classList.remove('slideout');
     containerThree.classList.add('show');
+    modalThree.classList.add('slidein');
 }
 openModalFour.onclick = () => {
+    modalFour.classList.remove('slideout');
     containerFour.classList.add('show');
+    modalFour.classList.add('slidein');
 }
 openModalFive.onclick = () => {
+    modalFive.classList.remove('slideout');
     containerFive.classList.add('show');
+    modalFive.classList.add('slidein');
 }
 openModalSix.onclick = () => {
+    modalSix.classList.remove('slideout');
     containerSix.classList.add('show');
+    modalSix.classList.add('slidein');
 }
 openModalSeven.onclick = () => {
+    modalSeven.classList.remove('slideout');
     containerSeven.classList.add('show');
+    modalSeven.classList.add('slidein');
 }
 openModalEight.onclick = () => {
+    modalEight.classList.remove('slideout');
     containerEight.classList.add('show');
+    modalEight.classList.add('slidein');
 }
 openModalNine.onclick = () => {
+    modalNine.classList.remove('slideout');
     containerNine.classList.add('show');
+    modalNine.classList.add('slidein');
 }
 
 closeModalOne.onclick = () => {
-    containerOne.classList.remove('show');
+    modalOne.classList.remove('slidein');
+    modalOne.classList.add('slideout');
+    setTimeout(() => {
+        containerOne.classList.remove('show');
+    }, 650)
 }
 closeModalTwo.onclick = () => {
-    containerTwo.classList.remove('show');
+    modalTwo.classList.remove('slidein');
+    modalTwo.classList.add('slideout');
+    setTimeout(() => {
+        containerTwo.classList.remove('show');
+    }, 650)
 }
 closeModalThree.onclick = () => {
-    containerThree.classList.remove('show');
+    modalThree.classList.remove('slidein');
+    modalThree.classList.add('slideout');
+    setTimeout(() => {
+        containerThree.classList.remove('show');
+    }, 650)
 }
 closeModalFour.onclick = () => {
-    containerFour.classList.remove('show');
+    modalFour.classList.remove('slidein');
+    modalFour.classList.add('slideout');
+    setTimeout(() => {
+        containerFour.classList.remove('show');
+    }, 650)
 }
 closeModalFive.onclick = () => {
-    containerFive.classList.remove('show');
+    modalFive.classList.remove('slidein');
+    modalFive.classList.add('slideout');
+    setTimeout(() => {
+        containerFive.classList.remove('show');
+    }, 650)
 }
 closeModalSix.onclick = () => {
-    containerSix.classList.remove('show');
+    modalSix.classList.remove('slidein');
+    modalSix.classList.add('slideout');
+    setTimeout(() => {
+        containerSix.classList.remove('show');
+    }, 650)
 }
 closeModalSeven.onclick = () => {
-    containerSeven.classList.remove('show');
+    modalSeven.classList.remove('slidein');
+    modalSeven.classList.add('slideout');
+    setTimeout(() => {
+        containerSeven.classList.remove('show');
+    }, 650)
 }
 closeModalEight.onclick = () => {
-    containerEight.classList.remove('show');
+    modalEight.classList.remove('slidein');
+    modalEight.classList.add('slideout');
+    setTimeout(() => {
+        containerEight.classList.remove('show');
+    }, 650)
 }
 closeModalNine.onclick = () => {
-    containerNine.classList.remove('show');
+    modalNine.classList.remove('slidein');
+    modalNine.classList.add('slideout');
+    setTimeout(() => {
+        containerNine.classList.remove('show');
+    }, 650)
 }

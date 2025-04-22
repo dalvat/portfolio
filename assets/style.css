@@ -18,11 +18,11 @@
     --accent-colour: #01d6b7;
     --accent-colour-2: #147c6d;
     --placeholder-text: #59928a;
-    --timeline-colour: #018876;
-    --timeline-colour-2: #017e86;
-    --timeline-centerline: #70ada4;
-    --timeline-title: #92ffd2;
-    --timeline-title-study: #95ebfa;
+    --study-colour: #00eeff;
+    --study-colour-2: #017e86;
+    --timeline-centerline: #a5a5a5;
+    --timeline-icon: #82ffec;
+    --timeline-icon-study: #91f8ff;
 }
 
 *::selection {
@@ -210,6 +210,10 @@ span{
     line-height: 1.5;
 }
 
+.aboutContent h2{
+    margin-bottom: 2rem;
+}
+
 .aboutContent h3{
     flex-direction: column;
     font-size: 2rem;
@@ -239,12 +243,11 @@ span{
 }
 
 .aboutButton:hover{
-    background-color: var(--background-colour);
+    background-color: var(--background-colour-2);
     color: var(--accent-colour);
 }
 
 .services h2,
-.portfolio h2,
 .contact h2,
 .experience h2{
     margin-top: 4rem;
@@ -305,13 +308,28 @@ span{
 }
 
 .servicesButton:hover{
-    background-color: var(--background-colour);
+    background-color: var(--background-colour-2);
     color: var(--accent-colour);
 }
 
 .portfolio{
     background: var(--background-colour-2);
-    padding-bottom: 5rem;
+}
+
+.portfolioContent h2{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.portfolioContent h3{
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 3rem;
+    border-top: 0.4rem solid var(--accent-colour-2);
+    border-left: 0.4rem solid var(--accent-colour-2);
+    border-right: 0.4rem solid var(--accent-colour-2);
+    border-radius: 3rem 3rem 0 0;
 }
 
 .portfolioContainer{
@@ -319,18 +337,24 @@ span{
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 3rem;
+    padding: 2rem 3rem 3rem 3rem;
+    border-left: 0.4rem solid var(--accent-colour-2);
+    border-right: 0.4rem solid var(--accent-colour-2);
+    border-bottom: 0.4rem solid var(--accent-colour-2);
+    border-radius: 0 0 3rem 3rem;
+    margin-bottom: 5rem;
 }
 
 .portfolioBox{
     position: relative;
     border-radius: 2rem;
-    border: 0.3rem solid var(--accent-colour-2);
+    border: 0.4rem solid var(--accent-colour-2);
     overflow: hidden;
     display: flex;
 }
 
 .portfolioBox:hover{
-    border: 0.3rem solid var(--accent-colour);
+    border: 0.4rem solid var(--accent-colour);
 }
 
 .portfolioBox img{
@@ -371,7 +395,7 @@ span{
 
 .portfolioOverlay p{
     font-size: 1.5rem;
-    margin: 1.5rem 0 1.5rem;
+    margin: 3rem;
 }
 
 .portfolioOverlay i{
@@ -382,7 +406,8 @@ span{
     padding: 0.5rem;
     border-radius: 50%;
     transition: 0.5s ease;
-    border: 0.25rem solid var(--accent-colour)
+    border: 0.25rem solid var(--accent-colour);
+    cursor: pointer;
 }
 
 .portfolioOverlay i:hover{
@@ -399,10 +424,17 @@ span{
     border: 0;
 }
 
+.experienceContent{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
 .experienceLink{
     font-size: 2rem;
     text-align: center;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
 }
 
 .experienceLink a{
@@ -428,8 +460,10 @@ span{
 
 .centerLine{
     margin: 0;
-    width: 0.5rem;
-    background-color: var(--timeline-centerline);
+    width: 0.4rem;
+    margin-left: 0.05rem;
+    margin-right: 0.05rem;
+    background-color: var(--background-colour-2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -452,13 +486,13 @@ span{
 }
 
 .content{
-    background-color: var(--timeline-colour);
+    background-color: var(--accent-colour-2);
     padding: 2rem;
     border-radius: 1rem;
 }
 
 .content.study{
-    background-color: var(--timeline-colour-2);
+    background-color: var(--study-colour-2);
 }
 
 .content.study.right{
@@ -473,7 +507,7 @@ span{
     height: 0;
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
-    border-left: 2rem solid var(--timeline-colour);
+    border-left: 2rem solid var(--accent-colour-2);
 }
 
 .leftArrow{
@@ -484,7 +518,7 @@ span{
     height: 0;
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
-    border-right: 2rem solid var(--timeline-colour);
+    border-right: 2rem solid var(--accent-colour-2);
 }
 
 .rightArrowStudy{
@@ -495,7 +529,7 @@ span{
     height: 0;
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
-    border-left: 2rem solid var(--timeline-colour-2);
+    border-left: 2rem solid var(--study-colour);
 }
 
 .leftArrowStudy{
@@ -506,7 +540,7 @@ span{
     height: 0;
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
-    border-right: 2rem solid var(--timeline-colour-2);
+    border-right: 2rem solid var(--study-colour-2);
 }
 
 .timelineEntry{
@@ -533,7 +567,7 @@ span{
 
 .timelineDetails::after{
     content:"\eceb";
-    color: var(--timeline-title);
+    color: var(--text-colour);
     position: absolute;
     left: 50%;
     transform: translate(-2.35rem);
@@ -544,14 +578,14 @@ span{
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    background-color: var(--background-colour-2);
-    border: 4px solid var(--timeline-colour);
+    background-color: var(--accent-colour-2);
+    border: 4px solid var(--accent-colour);
     border-radius: 50%;
 }
 
 .timelineStudy::after{
     content:"\edd3";
-    color: var(--timeline-title-study);
+    color: var(--text-colour);
     position: absolute;
     left: 50%;
     transform: translate(-2.35rem);
@@ -562,8 +596,8 @@ span{
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    background-color: var(--background-colour-2);
-    border: 4px solid var(--timeline-colour-2);
+    background-color: var(--study-colour-2);
+    border: 4px solid var(--study-colour);
     border-radius: 50%;
 }
 
@@ -584,12 +618,12 @@ span{
 
 .content h4,
 .content h3{
-    color: var(--timeline-title);
+    color: var(--text-colour);
 }
 
 .content.study h4,
 .content.study h3{
-    color: var(--timeline-title-study);
+    color: var(--text-colour);
 }
 
 
@@ -599,7 +633,7 @@ span{
 }
 
 .timelineDate{
-    color: var(--timeline-title);
+    color: var(--text-colour);
     display: flex;
     width: 47%;
     max-height: 15rem;
@@ -607,7 +641,7 @@ span{
 }
 
 .timelineDate.study{
-    color: var(--timeline-title-study);
+    color: var(--text-colour);
 }
 
 .timelineDate.left{
@@ -624,12 +658,6 @@ span{
     justify-content: left;
     align-items: center;
     gap: 2rem;
-}
-
-.experienceContent{
-    height: 100%;
-    width: 100%;
-    margin: 0;
 }
 
 .hobbiesContent{
@@ -708,11 +736,12 @@ input::-webkit-inner-spin-button {
     font-weight: 600;
     letter-spacing: 0.1rem;
     transition: 0.5s ease;
-    border: 0.25rem solid var(--accent-colour)
+    border: 0.25rem solid var(--accent-colour);
+    cursor: pointer;
 }
 
 .contact .sendButton:hover{
-    background-color: var(--background-colour-2);
+    background-color: var(--background-colour);
     color: var(--accent-colour);
 }
 
@@ -916,7 +945,7 @@ input::-webkit-inner-spin-button {
     .portfolioContainer{
         grid-template-columns: repeat(2,1fr);
     }
-    .modal{
+    .modalText{
         overflow-y: auto;
     }
     .hobbies{
@@ -989,10 +1018,39 @@ input::-webkit-inner-spin-button {
     .timeline{
         padding-bottom: 5rem;
     }
+    .experienceLink{
+        padding-bottom: 2rem;
+    }
 }
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
     }
+}
+
+@keyframes slideout {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+.slideout{
+    animation: slideout 1000ms ease;
+}
+
+@keyframes slidein {
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.slidein{
+    animation: slidein 1000ms ease;
 }
