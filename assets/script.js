@@ -42,7 +42,7 @@ const typed = new Typed('.typedRoles', {
     loop: true
 });
 
-// modals
+// modals open consts
 const openModalOne = document.querySelector('#openModalOne');
 const openModalTwo = document.querySelector('#openModalTwo');
 const openModalThree = document.querySelector('#openModalThree');
@@ -52,7 +52,8 @@ const openModalSix = document.querySelector('#openModalSix');
 const openModalSeven = document.querySelector('#openModalSeven');
 const openModalEight = document.querySelector('#openModalEight');
 const openModalNine = document.querySelector('#openModalNine');
-
+// modal containers consts
+const modalContainers = document.querySelectorAll('.modalContainer');
 const containerOne = document.querySelector('#modalContainerOne');
 const containerTwo = document.querySelector('#modalContainerTwo');
 const containerThree = document.querySelector('#modalContainerThree');
@@ -62,7 +63,7 @@ const containerSix = document.querySelector('#modalContainerSix');
 const containerSeven = document.querySelector('#modalContainerSeven');
 const containerEight = document.querySelector('#modalContainerEight');
 const containerNine = document.querySelector('#modalContainerNine');
-
+// modal close consts
 const closeModalOne = document.querySelector('#closeModalOne');
 const closeModalTwo = document.querySelector('#closeModalTwo');
 const closeModalThree = document.querySelector('#closeModalThree');
@@ -72,7 +73,7 @@ const closeModalSix = document.querySelector('#closeModalSix');
 const closeModalSeven = document.querySelector('#closeModalSeven');
 const closeModalEight = document.querySelector('#closeModalEight');
 const closeModalNine = document.querySelector('#closeModalNine');
-
+// modal consts
 const modalOne = document.querySelector('.modal.one');
 const modalTwo = document.querySelector('.modal.two');
 const modalThree = document.querySelector('.modal.three');
@@ -83,6 +84,23 @@ const modalSeven = document.querySelector('.modal.seven');
 const modalEight = document.querySelector('.modal.eight');
 const modalNine = document.querySelector('.modal.nine');
 
+// image gallery consts
+const imgGal = document.querySelectorAll('#imgGallery');
+const prevBtns = document.querySelectorAll('#previousButton');
+const nextBtns = document.querySelectorAll('#nextButton');
+// image arrays
+const modalFourImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalFiveImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalSixImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalSevenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalEightImgs = ['./assets/images/Stokes Bay Memorial - Design Concept Plan.jpg', './assets/images/Stokes Bay Memorial - Schedule.jpg', './assets/images/Stokes Bay Memorial CAD.png'];
+const modalNineImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+// image gallery variables
+let images = [];
+let currentIndex = 0;
+let currentImg = document.querySelectorAll('#currentImg');
+
+// open modals onclick functions
 openModalOne.onclick = () => {
     modalOne.classList.remove('slideout');
     containerOne.classList.add('show');
@@ -102,33 +120,58 @@ openModalFour.onclick = () => {
     modalFour.classList.remove('slideout');
     containerFour.classList.add('show');
     modalFour.classList.add('slidein');
+    images = modalFourImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
 }
 openModalFive.onclick = () => {
     modalFive.classList.remove('slideout');
     containerFive.classList.add('show');
     modalFive.classList.add('slidein');
+    images = modalFiveImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
 }
 openModalSix.onclick = () => {
     modalSix.classList.remove('slideout');
     containerSix.classList.add('show');
     modalSix.classList.add('slidein');
+    images = modalSixImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
 }
 openModalSeven.onclick = () => {
     modalSeven.classList.remove('slideout');
     containerSeven.classList.add('show');
     modalSeven.classList.add('slidein');
+    images = modalSevenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
 }
 openModalEight.onclick = () => {
     modalEight.classList.remove('slideout');
     containerEight.classList.add('show');
     modalEight.classList.add('slidein');
+    images = modalEightImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
 }
 openModalNine.onclick = () => {
     modalNine.classList.remove('slideout');
     containerNine.classList.add('show');
     modalNine.classList.add('slidein');
+    images = modalNineImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
 }
 
+// close modals onclick functions
 closeModalOne.onclick = () => {
     modalOne.classList.remove('slidein');
     modalOne.classList.add('slideout');
@@ -155,40 +198,94 @@ closeModalFour.onclick = () => {
     modalFour.classList.add('slideout');
     setTimeout(() => {
         containerFour.classList.remove('show');
+        images = [];
     }, 650)
+    currentIndex = 0
 }
 closeModalFive.onclick = () => {
     modalFive.classList.remove('slidein');
     modalFive.classList.add('slideout');
     setTimeout(() => {
         containerFive.classList.remove('show');
+        images = [];
     }, 650)
+    currentIndex = 0
 }
 closeModalSix.onclick = () => {
     modalSix.classList.remove('slidein');
     modalSix.classList.add('slideout');
     setTimeout(() => {
         containerSix.classList.remove('show');
+        images = [];
     }, 650)
+    currentIndex = 0
 }
 closeModalSeven.onclick = () => {
     modalSeven.classList.remove('slidein');
     modalSeven.classList.add('slideout');
     setTimeout(() => {
         containerSeven.classList.remove('show');
-    }, 650)
+        images = [];
+    }, 650);
+    currentIndex = 0
 }
 closeModalEight.onclick = () => {
     modalEight.classList.remove('slidein');
     modalEight.classList.add('slideout');
     setTimeout(() => {
         containerEight.classList.remove('show');
-    }, 650)
+        images = [];
+    }, 650);
+    currentIndex = 0
 }
 closeModalNine.onclick = () => {
     modalNine.classList.remove('slidein');
     modalNine.classList.add('slideout');
     setTimeout(() => {
         containerNine.classList.remove('show');
-    }, 650)
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+
+// close modal by click outside of modal
+modalContainers.forEach(element => {
+    element.onclick= () => {
+        element.firstElementChild.classList.remove('slidein');
+        element.firstElementChild.classList.add('slideout');
+        setTimeout(() => {
+            element.classList.remove('show');
+        }, 650);
+        images = [];
+        currentIndex = 0
+    }
+})
+
+// image gallery onclick functions
+prevBtns.forEach(prevBtn => {
+    prevBtn.onclick = () => {
+        currentIndex = (currentIndex + 1 + images.length) % images.length;
+        updateImage();
+    }
+})
+nextBtns.forEach(nextBtn => {
+    nextBtn.onclick = () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+})
+
+// update image function
+function updateImage() {
+    currentImg.forEach(element => {
+        element.classList.remove('fadeIn');
+        element.classList.add('fadeOut');
+        setTimeout(() => {
+            element.src = images[currentIndex];
+            setTimeout(() => {
+                element.classList.remove('fadeOut');
+            }, 100);
+            element.classList.add('fadeIn')
+        }, 400); 
+    });
 }

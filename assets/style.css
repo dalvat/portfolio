@@ -340,6 +340,7 @@ span{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
+    justify-content: center;
     gap: 3rem;
     padding: 2rem 3rem 3rem 3rem;
     border-left: 0.4rem solid var(--accent-colour-2);
@@ -351,10 +352,14 @@ span{
 
 .portfolioBox{
     position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 2rem;
     border: 0.4rem solid var(--accent-colour-2);
     overflow: hidden;
     display: flex;
+    height: 100%;
+    background-color: var(--text-colour);
 }
 
 .portfolioBox:hover{
@@ -369,6 +374,7 @@ span{
 .portfolioBox:hover img{
     transform: scale(1.25);
     transition: 0.5s ease;
+    
 }
 
 .portfolioBox .portfolioOverlay{
@@ -395,10 +401,6 @@ span{
 
 .portfolioOverlay h4{
     font-size: 3rem;
-}
-
-.portfolioOverlay p{
-    font-size: 1.5rem;
     margin: 3rem;
 }
 
@@ -807,11 +809,29 @@ input::-webkit-inner-spin-button {
     max-height: 90vh;
     border: 0.25rem solid var(--accent-colour);
     border-radius: 3rem;
+    z-index: 200;
 }
 
-.modal img{
-    width: 25vw;
+.imgGallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#currentImg{
+    width: auto;
+    height: 60vh;
     padding: 4rem;
+}
+
+#nextButton,
+#previousButton{
+    cursor: pointer;
+}
+
+#previousButton i,
+#nextButton i{
+    color: var(--accent-colour);
 }
 
 .modal i{
@@ -878,6 +898,10 @@ input::-webkit-inner-spin-button {
     .contact{
         min-height: auto;
     }
+    #currentImg{
+        width: 60vw;
+        height: auto;
+    }
 }
 
 @media (max-width: 820px) {
@@ -941,16 +965,18 @@ input::-webkit-inner-spin-button {
         margin-top: 2rem;
     }
     .portfolioContainer{
-        margin-bottom: 5rem;
+        grid-template-columns: repeat(2,1fr);
+        margin-bottom: 5rem;  
     }
     .portfolio h2{
         margin-top: 2rem;
     }
-    .portfolioContainer{
-        grid-template-columns: repeat(2,1fr);
-    }
     .modalText{
         overflow-y: auto;
+    }
+    #currentImg{
+        width: 70vw;
+        height: auto;
     }
     .hobbies{
         flex-direction: column;
@@ -1037,6 +1063,10 @@ input::-webkit-inner-spin-button {
     .experienceLink{
         padding-bottom: 2rem;
     }
+    #currentImg{
+        width: 60vw;
+        height: auto;
+    }
 }
 
 @media (max-width: 450px) {
@@ -1059,14 +1089,40 @@ input::-webkit-inner-spin-button {
 }
 
 @keyframes slidein {
-    0%{
+    0% {
         transform: translateY(100vh);
     }
-    100%{
+    100% {
         transform: translateY(0);
     }
 }
 
 .slidein{
     animation: slidein 1000ms ease;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;;
+    }
+}
+
+.fadeOut{
+    animation: fadeout 500ms ease;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;;
+    }
+}
+
+.fadeIn{
+    animation: fadein 500ms ease;
 }
