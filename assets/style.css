@@ -88,6 +88,10 @@ span{
     transition: 0.5s ease;
 }
 
+.navbar a:first-child{
+    margin-left: 0;
+}
+
 .navbar a.active,
 .navbar a:hover{
     color: var(--accent-colour);
@@ -964,6 +968,18 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 625px){
+    .home,
+    .services,
+    .portfolio{
+        padding-bottom: 5rem;
+    }
+    .about,
+    .contact{
+        padding-bottom: 7rem;
+    }
+    .hobbies{
+        padding-bottom: 9rem;
+    }
     .portfolioContainer{
         grid-template-columns: 1fr;
     }
