@@ -265,6 +265,7 @@ span{
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+    height: 100%;
 }
 
 .servicesContainer .servicesBox{
@@ -275,6 +276,7 @@ span{
     text-align: center;
     border: 0.3rem solid var(--accent-colour-2);
     transition: 0.5s ease;
+    height: 100%;
 }
 
 .servicesContainer .servicesBox:hover{
