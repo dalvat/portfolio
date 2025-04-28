@@ -59,7 +59,7 @@ const openModalThirteen = document.querySelector('#openModalThirteen');
 const openModalFourteen = document.querySelector('#openModalFourteen');
 const openModalFifteen = document.querySelector('#openModalFifteen');
 // modal containers consts
-const modalContainers = document.querySelectorAll('.modalContainer');
+const modalContainers = document.querySelectorAll('.modalContainer:not(.preview)');
 const containerOne = document.querySelector('#modalContainerOne');
 const containerTwo = document.querySelector('#modalContainerTwo');
 const containerThree = document.querySelector('#modalContainerThree');
@@ -114,7 +114,7 @@ const prevBtns = document.querySelectorAll('#previousButton');
 const nextBtns = document.querySelectorAll('#nextButton');
 // image arrays
 const modalFourImgs = ['./assets/images/facade-blender.png', './assets/images/facade-blender-2.png', './assets/images/facade-ext-1.png', './assets/images/facade-ext-2.png', './assets/images/facade-int-1.png', './assets/images/facade-int-2.png'];
-const modalFiveImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalFiveImgs = ['./assets/images/internal-layout-blender-1.png', './assets/images/internal-layout-blender-2.png', './assets/images/internal-layout-1.png', './assets/images/internal-layout-2.png', './assets/images/internal-layout-3.png'];
 const modalSixImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
 const modalSevenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
 const modalEightImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
@@ -430,4 +430,34 @@ function updateImage() {
             element.classList.add('fadeIn')
         }, 400); 
     });
+}
+
+//large image preview
+const containerLrgImg = document.querySelector('#modalContainerLargeImg');
+const modalImg = document.querySelector('.largeImg');
+const largeImg = document.querySelector('#largePreview');
+const closeModalImg = document.querySelector('#closeLargeImgModal')
+
+currentImg.forEach(img => {
+    img.onclick = () => {
+        containerLrgImg.classList.add('show');
+        modalImg.classList.add('slidein');
+        largeImg.src = images[currentIndex];
+    }
+})
+
+closeModalImg.onclick = () => {
+    modalImg.classList.remove('slidein');
+    modalImg.classList.add('slideout');
+    setTimeout(() => {
+        containerLrgImg.classList.remove('show');
+    }, 650);
+}
+
+containerLrgImg.onclick= () => {
+    modalImg.classList.remove('slidein');
+    modalImg.classList.add('slideout');
+    setTimeout(() => {
+        containerLrgImg.classList.remove('show');
+    }, 650);
 }
