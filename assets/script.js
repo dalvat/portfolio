@@ -52,6 +52,12 @@ const openModalSix = document.querySelector('#openModalSix');
 const openModalSeven = document.querySelector('#openModalSeven');
 const openModalEight = document.querySelector('#openModalEight');
 const openModalNine = document.querySelector('#openModalNine');
+const openModalTen = document.querySelector('#openModalTen');
+const openModalEleven = document.querySelector('#openModalEleven');
+const openModalTwelve = document.querySelector('#openModalTwelve');
+const openModalThirteen = document.querySelector('#openModalThirteen');
+const openModalFourteen = document.querySelector('#openModalFourteen');
+const openModalFifteen = document.querySelector('#openModalFifteen');
 // modal containers consts
 const modalContainers = document.querySelectorAll('.modalContainer');
 const containerOne = document.querySelector('#modalContainerOne');
@@ -63,6 +69,12 @@ const containerSix = document.querySelector('#modalContainerSix');
 const containerSeven = document.querySelector('#modalContainerSeven');
 const containerEight = document.querySelector('#modalContainerEight');
 const containerNine = document.querySelector('#modalContainerNine');
+const containerTen = document.querySelector('#modalContainerTen');
+const containerEleven = document.querySelector('#modalContainerEleven');
+const containerTwelve = document.querySelector('#modalContainerTwelve');
+const containerThirteen = document.querySelector('#modalContainerThirteen');
+const containerFourteen = document.querySelector('#modalContainerFourteen');
+const containerFifteen = document.querySelector('#modalContainerFifteen');
 // modal close consts
 const closeModalOne = document.querySelector('#closeModalOne');
 const closeModalTwo = document.querySelector('#closeModalTwo');
@@ -73,6 +85,12 @@ const closeModalSix = document.querySelector('#closeModalSix');
 const closeModalSeven = document.querySelector('#closeModalSeven');
 const closeModalEight = document.querySelector('#closeModalEight');
 const closeModalNine = document.querySelector('#closeModalNine');
+const closeModalTen = document.querySelector('#closeModalTen');
+const closeModalEleven = document.querySelector('#closeModalEleven');
+const closeModalTwelve = document.querySelector('#closeModalTwelve');
+const closeModalThirteen = document.querySelector('#closeModalThirteen');
+const closeModalFourteen = document.querySelector('#closeModalFourteen');
+const closeModalFifteen = document.querySelector('#closeModalFifteen');
 // modal consts
 const modalOne = document.querySelector('.modal.one');
 const modalTwo = document.querySelector('.modal.two');
@@ -83,18 +101,30 @@ const modalSix = document.querySelector('.modal.six');
 const modalSeven = document.querySelector('.modal.seven');
 const modalEight = document.querySelector('.modal.eight');
 const modalNine = document.querySelector('.modal.nine');
+const modalTen = document.querySelector('.modal.ten');
+const modalEleven = document.querySelector('.modal.eleven');
+const modalTwelve = document.querySelector('.modal.twelve');
+const modalThirteen = document.querySelector('.modal.thirteen');
+const modalFourteen = document.querySelector('.modal.fourteen');
+const modalFifteen = document.querySelector('.modal.fifteen');
 
 // image gallery consts
 const imgGal = document.querySelectorAll('#imgGallery');
 const prevBtns = document.querySelectorAll('#previousButton');
 const nextBtns = document.querySelectorAll('#nextButton');
 // image arrays
-const modalFourImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalFourImgs = ['./assets/images/facade-blender.png', './assets/images/facade-blender-2.png', './assets/images/facade-ext-1.png', './assets/images/facade-ext-2.png', './assets/images/facade-int-1.png', './assets/images/facade-int-2.png'];
 const modalFiveImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
 const modalSixImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
 const modalSevenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
-const modalEightImgs = ['./assets/images/Stokes Bay Memorial - Design Concept Plan.jpg', './assets/images/Stokes Bay Memorial - Schedule.jpg', './assets/images/Stokes Bay Memorial CAD.png'];
+const modalEightImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
 const modalNineImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalTenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalElevenImgs = ['./assets/images/Stokes Bay Memorial - Design Concept Plan.jpg', './assets/images/Stokes Bay Memorial - Schedule.jpg', './assets/images/Stokes Bay Memorial CAD.png'];
+const modalTwelveImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalThirteenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalFourteenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
+const modalFifteenImgs = ['./assets/images/project1.jpeg', './assets/images/project2.jpeg', './assets/images/project3.jpeg'];
 // image gallery variables
 let images = [];
 let currentIndex = 0;
@@ -166,6 +196,60 @@ openModalNine.onclick = () => {
     containerNine.classList.add('show');
     modalNine.classList.add('slidein');
     images = modalNineImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalTen.onclick = () => {
+    modalTen.classList.remove('slideout');
+    containerTen.classList.add('show');
+    modalTen.classList.add('slidein');
+    images = modalTenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalEleven.onclick = () => {
+    modalEleven.classList.remove('slideout');
+    containerEleven.classList.add('show');
+    modalEleven.classList.add('slidein');
+    images = modalElevenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalTwelve.onclick = () => {
+    modalTwelve.classList.remove('slideout');
+    containerTwelve.classList.add('show');
+    modalTwelve.classList.add('slidein');
+    images = modalTwelveImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalThirteen.onclick = () => {
+    modalThirteen.classList.remove('slideout');
+    containerThirteen.classList.add('show');
+    modalThirteen.classList.add('slidein');
+    images = modalThirteenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalFourteen.onclick = () => {
+    modalFourteen.classList.remove('slideout');
+    containerFourteen.classList.add('show');
+    modalFourteen.classList.add('slidein');
+    images = modalFourteenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalFifteen.onclick = () => {
+    modalFifteen.classList.remove('slideout');
+    containerFifteen.classList.add('show');
+    modalFifteen.classList.add('slidein');
+    images = modalFifteenImgs;
     currentImg.forEach(element => {
         element.src = images[0];
     })
@@ -247,6 +331,60 @@ closeModalNine.onclick = () => {
     }, 650);
     currentIndex = 0
 }
+closeModalTen.onclick = () => {
+    modalTen.classList.remove('slidein');
+    modalTen.classList.add('slideout');
+    setTimeout(() => {
+        containerTen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalEleven.onclick = () => {
+    modalEleven.classList.remove('slidein');
+    modalEleven.classList.add('slideout');
+    setTimeout(() => {
+        containerEleven.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalTwelve.onclick = () => {
+    modalTwelve.classList.remove('slidein');
+    modalTwelve.classList.add('slideout');
+    setTimeout(() => {
+        containerTwelve.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalThirteen.onclick = () => {
+    modalThirteen.classList.remove('slidein');
+    modalThirteen.classList.add('slideout');
+    setTimeout(() => {
+        containerThirteen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalFourteen.onclick = () => {
+    modalFourteen.classList.remove('slidein');
+    modalFourteen.classList.add('slideout');
+    setTimeout(() => {
+        containerFourteen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalFifteen.onclick = () => {
+    modalFifteen.classList.remove('slidein');
+    modalFifteen.classList.add('slideout');
+    setTimeout(() => {
+        containerFifteen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
 
 // close modal by click outside of modal
 modalContainers.forEach(element => {
@@ -264,14 +402,18 @@ modalContainers.forEach(element => {
 // image gallery onclick functions
 prevBtns.forEach(prevBtn => {
     prevBtn.onclick = () => {
-        currentIndex = (currentIndex + 1 + images.length) % images.length;
-        updateImage();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateImage();
+        };
     }
 })
 nextBtns.forEach(nextBtn => {
     nextBtn.onclick = () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+            updateImage();
+        };
     }
 })
 

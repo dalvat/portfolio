@@ -829,13 +829,24 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
+#previousButton:hover i,
+#nextButton:hover i{
+    color: var(--accent-colour);
+    background-color: var(--background-colour);
+}
+
 #previousButton i,
 #nextButton i{
-    color: var(--accent-colour);
+    color: var(--background-colour-2);
+    background-color: var(--accent-colour);
+    border: 0.25rem solid var(--accent-colour);
+    border-radius: 50%;
+    transition: 0.5s ease;
+    font-size: 4rem;
 }
 
 .modal i{
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .modalTitle{
@@ -846,20 +857,17 @@ input::-webkit-inner-spin-button {
 
 .modalText{
     font-size: 1.5rem;
-    padding-bottom: 2rem;
-    width: 75%;
+    max-width: 65%;
+    overflow-y: auto;
 }
 
 .modalButton i{
     background-color: var(--accent-colour);
     color: var(--background-colour-2);
     font-size: 4rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
     border-radius: 50%;
     transition: 0.5s ease;
     border: 0.25rem solid var(--accent-colour);
-    margin-bottom: 3rem;
 }
 
 .modalButton:hover i{
@@ -973,6 +981,7 @@ input::-webkit-inner-spin-button {
     }
     .modalText{
         overflow-y: auto;
+        max-width: 80%;
     }
     #currentImg{
         width: 70vw;
