@@ -117,14 +117,14 @@ const imgGal = document.querySelectorAll('#imgGallery');
 const prevBtns = document.querySelectorAll('#previousButton');
 const nextBtns = document.querySelectorAll('#nextButton');
 // image arrays
-const modalFourImgs = ['./assets/images/estate-map-cad-1.png', './assets/images/estate-map-1.jpg'];
-const modalFiveImgs = ['./assets/images/Stokes Bay Memorial CAD.png', './assets/images/Stokes Bay Memorial - Design Concept Plan.jpg', './assets/images/Stokes Bay Memorial - Schedule.jpg'];
+const modalFourImgs = ['./assets/images/estate-map-cad-1.png', './assets/images/estate-map-1.png'];
+const modalFiveImgs = ['./assets/images/Stokes Bay Memorial CAD.png', './assets/images/Stokes Bay Memorial - Design Concept Plan.png', './assets/images/Stokes Bay Memorial - Schedule.png'];
 const modalSixImgs = ['./assets/images/ownership-breakdown-cad-1.png', './assets/images/ownership-breakdown-1.png'];
 const modalSevenImgs = ['./assets/images/acquisition-plan-cad-1.png', './assets/images/acquisition-plan-1.png', './assets/images/acquisition-plan-2.png', './assets/images/acquisition-plan-3.png'];
 const modalEightImgs = ['./assets/images/property-comparison-cad-1.png', './assets/images/property-comparison-1.png'];
 const modalNineImgs = ['./assets/images/constraints-plan-cad-1.png', './assets/images/constraints-plan-1.png'];
 const modalTenImgs = ['./assets/images/facade-blender.png', './assets/images/facade-blender-2.png', './assets/images/facade-ext-1.png', './assets/images/facade-ext-2.png', './assets/images/facade-int-1.png', './assets/images/facade-int-2.png'];
-const modalElevenImgs = ['./assets/images/internal-layout-blender-1.png', './assets/images/internal-layout-blender-2.png', './assets/images/internal-layout-1.png', './assets/images/internal-layout-2.png', './assets/images/internal-layout-3.png'];
+const modalElevenImgs = ['./assets/images/internal-layout-blender-1.png', './assets/images/internal-layout-blender-2.png', './assets/images/internal-layout-1.png', './assets/images/internal-layout-2.png', './assets/images/internal-layout-3.png', './assets/images/internal-layout-4.png'];
 const modalTwelveImgs = ['./assets/images/changing-room-blender-1.png', './assets/images/changing-room-blender-2.png', './assets/images/changing-room-1.png', './assets/images/changing-room-2.png'];
 const modalThirteenImgs = ['./assets/images/golf-bunkers-blender-1.png', './assets/images/golf-bunkers-blender-2.png', './assets/images/golf-bunkers-1.png', './assets/images/golf-bunkers-2.png', './assets/images/golf-bunkers-3.png'];
 const modalFourteenImgs = ['./assets/images/scaffolding-bridge-blender-1.png', './assets/images/scaffolding-bridge-blender-2.png', './assets/images/scaffolding-bridge-1.png', './assets/images/scaffolding-bridge-2.png', './assets/images/scaffolding-bridge-3.png'];
