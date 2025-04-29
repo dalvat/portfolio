@@ -259,8 +259,20 @@ span{
     text-align: center;
 }
 
+.otherServicesContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    height: 100%;
+    padding-bottom: 5rem;
+}
+
 .servicesContainer{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -268,10 +280,10 @@ span{
     height: 100%;
 }
 
-.servicesContainer .servicesBox{
+.servicesBox{
     background: var(--background-colour-2);
-    flex: 1 1 30rem;
     padding: 3rem 2rem 4rem;
+    margin-bottom: 4rem;
     border-radius: 2rem;
     text-align: center;
     border: 0.3rem solid var(--accent-colour-2);
@@ -537,7 +549,7 @@ span{
     height: 0;
     border-top: 1rem solid transparent;
     border-bottom: 1rem solid transparent;
-    border-left: 2rem solid var(--study-colour);
+    border-left: 2rem solid var(--study-colour-2);
 }
 
 .leftArrowStudy{
@@ -921,6 +933,7 @@ input::-webkit-inner-spin-button {
     }
     .contact{
         min-height: auto;
+        padding-bottom: 5rem;
     }
     #currentImg{
         width: 60vw;
@@ -955,6 +968,7 @@ input::-webkit-inner-spin-button {
     .home{
         flex-direction: column;
         text-align: center;
+        padding-bottom: 5rem;
     }
     .homeActions{
         display: flex;
@@ -976,6 +990,7 @@ input::-webkit-inner-spin-button {
     .about{
         flex-direction: column;
         text-align: center;
+        padding-bottom: 7rem;
     }
     .about h2{
         text-align: center;
@@ -992,6 +1007,10 @@ input::-webkit-inner-spin-button {
         grid-template-columns: repeat(2,1fr);
         margin-bottom: 5rem;  
     }
+    .servicesContainer{
+        grid-template-columns: 1fr;
+
+    }
     .portfolio h2{
         margin-top: 2rem;
     }
@@ -1006,7 +1025,7 @@ input::-webkit-inner-spin-button {
     .hobbies{
         flex-direction: column;
         text-align: center;
-        padding-bottom: 5rem;
+        padding-bottom: 7rem;
     }
     .hobbies h2{
         text-align: center;
@@ -1031,7 +1050,8 @@ input::-webkit-inner-spin-button {
     .hobbies{
         padding-bottom: 9rem;
     }
-    .portfolioContainer{
+    .portfolioContainer,
+    .servicesContainer{
         grid-template-columns: 1fr;
     }
     .contact form .inputBox input{
