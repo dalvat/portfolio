@@ -35,7 +35,7 @@ window.onscroll = () => {
 
 // typed text in home section
 const typed = new Typed('.typedRoles', {
-    strings: ['CAD Specialist', '3D Modeler', '3D Visualiser'],
+    strings: ['3D Modeler', '3D Visualiser', 'CAD Specialist'],
     typeSpeed: 100,
     backSpeed: 50,
     backDelay: 1000,
@@ -59,6 +59,11 @@ const openModalThirteen = document.querySelector('#openModalThirteen');
 const openModalFourteen = document.querySelector('#openModalFourteen');
 const openModalFifteen = document.querySelector('#openModalFifteen');
 const openModalSixteen = document.querySelector('#openModalSixteen');
+const openModalSeventeen = document.querySelector('#openModalSeventeen');
+const openModalEighteen = document.querySelector('#openModalEighteen');
+const openModalNineteen = document.querySelector('#openModalNineteen');
+const openModalTwenty = document.querySelector('#openModalTwenty');
+const openModalTwentyOne = document.querySelector('#openModalTwentyOne');
 // modal containers consts
 const modalContainers = document.querySelectorAll('.modalContainer:not(.preview)');
 const containerOne = document.querySelector('#modalContainerOne');
@@ -77,6 +82,11 @@ const containerThirteen = document.querySelector('#modalContainerThirteen');
 const containerFourteen = document.querySelector('#modalContainerFourteen');
 const containerFifteen = document.querySelector('#modalContainerFifteen');
 const containerSixteen = document.querySelector('#modalContainerSixteen');
+const containerSeventeen = document.querySelector('#modalContainerSeventeen');
+const containerEighteen = document.querySelector('#modalContainerEighteen');
+const containerNineteen = document.querySelector('#modalContainerNineteen');
+const containerTwenty = document.querySelector('#modalContainerTwenty');
+const containerTwentyOne = document.querySelector('#modalContainerTwentyOne');
 // modal close consts
 const closeModalOne = document.querySelector('#closeModalOne');
 const closeModalTwo = document.querySelector('#closeModalTwo');
@@ -94,6 +104,11 @@ const closeModalThirteen = document.querySelector('#closeModalThirteen');
 const closeModalFourteen = document.querySelector('#closeModalFourteen');
 const closeModalFifteen = document.querySelector('#closeModalFifteen');
 const closeModalSixteen = document.querySelector('#closeModalSixteen');
+const closeModalSeventeen = document.querySelector('#closeModalSeventeen');
+const closeModalEighteen = document.querySelector('#closeModalEighteen');
+const closeModalNineteen = document.querySelector('#closeModalNineteen');
+const closeModalTwenty = document.querySelector('#closeModalTwenty');
+const closeModalTwentyOne = document.querySelector('#closeModalTwentyOne');
 // modal consts
 const modalOne = document.querySelector('.modal.one');
 const modalTwo = document.querySelector('.modal.two');
@@ -111,25 +126,38 @@ const modalThirteen = document.querySelector('.modal.thirteen');
 const modalFourteen = document.querySelector('.modal.fourteen');
 const modalFifteen = document.querySelector('.modal.fifteen');
 const modalSixteen = document.querySelector('.modal.sixteen');
+const modalSeventeen = document.querySelector('.modal.seventeen');
+const modalEighteen = document.querySelector('.modal.eighteen');
+const modalNineteen = document.querySelector('.modal.nineteen');
+const modalTwenty = document.querySelector('.modal.twenty');
+const modalTwentyOne = document.querySelector('.modal.twentyone');
 
 // image gallery consts
 const imgGal = document.querySelectorAll('#imgGallery');
 const prevBtns = document.querySelectorAll('#previousButton');
 const nextBtns = document.querySelectorAll('#nextButton');
 // image arrays
-const modalFourImgs = ['./assets/images/estate-map-cad-1.png', './assets/images/estate-map-1.png'];
-const modalFiveImgs = ['./assets/images/Stokes Bay Memorial CAD.png', './assets/images/Stokes Bay Memorial - Design Concept Plan.png', './assets/images/Stokes Bay Memorial - Schedule.png'];
-const modalSixImgs = ['./assets/images/ownership-breakdown-cad-1.png', './assets/images/ownership-breakdown-1.png'];
-const modalSevenImgs = ['./assets/images/acquisition-plan-cad-1.png', './assets/images/acquisition-plan-1.png', './assets/images/acquisition-plan-2.png', './assets/images/acquisition-plan-3.png'];
-const modalEightImgs = ['./assets/images/property-comparison-cad-1.png', './assets/images/property-comparison-1.png'];
-const modalNineImgs = ['./assets/images/constraints-plan-cad-1.png', './assets/images/constraints-plan-1.png'];
-const modalTenImgs = ['./assets/images/facade-blender.png', './assets/images/facade-blender-2.png', './assets/images/facade-ext-1.png', './assets/images/facade-ext-2.png', './assets/images/facade-int-1.png', './assets/images/facade-int-2.png'];
-const modalElevenImgs = ['./assets/images/internal-layout-blender-1.png', './assets/images/internal-layout-blender-2.png', './assets/images/internal-layout-1.png', './assets/images/internal-layout-2.png', './assets/images/internal-layout-3.png', './assets/images/internal-layout-4.png'];
-const modalTwelveImgs = ['./assets/images/changing-room-blender-1.png', './assets/images/changing-room-blender-2.png', './assets/images/changing-room-1.png', './assets/images/changing-room-2.png'];
-const modalThirteenImgs = ['./assets/images/golf-bunkers-blender-1.png', './assets/images/golf-bunkers-blender-2.png', './assets/images/golf-bunkers-1.png', './assets/images/golf-bunkers-2.png', './assets/images/golf-bunkers-3.png'];
-const modalFourteenImgs = ['./assets/images/scaffolding-bridge-blender-1.png', './assets/images/scaffolding-bridge-blender-2.png', './assets/images/scaffolding-bridge-1.png', './assets/images/scaffolding-bridge-2.png', './assets/images/scaffolding-bridge-3.png'];
-const modalFifteenImgs = ['./assets/images/context-building-blender-1.png', './assets/images/context-building-blender-2.png', './assets/images/context-building-1.png', './assets/images/context-building-2.png', './assets/images/context-building-3.png'];
-const modalSixteenImgs = ['./assets/images/roundabout-scene-blender-1.png', './assets/images/roundabout-scene-blender-2.png', './assets/images/roundabout-scene-1.png', './assets/images/roundabout-scene-2.png', './assets/images/roundabout-scene-3.png', './assets/images/roundabout-scene-4.png'];
+// 3d modelling
+const modalFourImgs = ['./assets/images/facade-blender.png', './assets/images/facade-blender-2.png', './assets/images/facade-ext-1.png', './assets/images/facade-ext-2.png', './assets/images/facade-int-1.png', './assets/images/facade-int-2.png'];
+const modalFiveImgs = ['./assets/images/internal-layout-blender-1.png', './assets/images/internal-layout-blender-2.png', './assets/images/internal-layout-1.png', './assets/images/internal-layout-2.png', './assets/images/internal-layout-3.png', './assets/images/internal-layout-4.png'];
+const modalSixImgs = ['./assets/images/changing-room-blender-1.png', './assets/images/changing-room-blender-2.png', './assets/images/changing-room-1.png', './assets/images/changing-room-2.png'];
+const modalSevenImgs = ['./assets/images/golf-bunkers-blender-1.png', './assets/images/golf-bunkers-blender-2.png', './assets/images/golf-bunkers-1.png', './assets/images/golf-bunkers-2.png', './assets/images/golf-bunkers-3.png'];
+const modalEightImgs = ['./assets/images/scaffolding-bridge-blender-1.png', './assets/images/scaffolding-bridge-blender-2.png', './assets/images/scaffolding-bridge-1.png', './assets/images/scaffolding-bridge-2.png', './assets/images/scaffolding-bridge-3.png'];
+const modalNineImgs = ['./assets/images/context-building-blender-1.png', './assets/images/context-building-blender-2.png', './assets/images/context-building-1.png', './assets/images/context-building-2.png', './assets/images/context-building-3.png'];
+// 3d visualisation
+const modalTenImgs = ['./assets/images/roundabout-scene-blender-1.png', './assets/images/roundabout-scene-blender-2.png', './assets/images/roundabout-scene-1.png', './assets/images/roundabout-scene-2.png', './assets/images/roundabout-scene-3.png', './assets/images/roundabout-scene-4.png'];
+const modalElevenImgs = [];
+const modalTwelveImgs = [];
+const modalThirteenImgs = [];
+const modalFourteenImgs = [];
+const modalFifteenImgs = [];
+// cad
+const modalSixteenImgs = ['./assets/images/estate-map-cad-1.png', './assets/images/estate-map-1.png'];
+const modalSeventeenImgs = ['./assets/images/Stokes Bay Memorial CAD.png', './assets/images/Stokes Bay Memorial - Design Concept Plan.png', './assets/images/Stokes Bay Memorial - Schedule.png'];
+const modalEighteenImgs = ['./assets/images/ownership-breakdown-cad-1.png', './assets/images/ownership-breakdown-1.png'];
+const modalNineteenImgs = ['./assets/images/acquisition-plan-cad-1.png', './assets/images/acquisition-plan-1.png', './assets/images/acquisition-plan-2.png', './assets/images/acquisition-plan-3.png'];
+const modalTwentyImgs = ['./assets/images/property-comparison-cad-1.png', './assets/images/property-comparison-1.png'];
+const modalTwentyOneImgs = ['./assets/images/constraints-plan-cad-1.png', './assets/images/constraints-plan-1.png'];
 
 // image gallery variables
 let images = [];
@@ -215,56 +243,101 @@ openModalTen.onclick = () => {
         element.src = images[0];
     })
 }
-openModalEleven.onclick = () => {
-    modalEleven.classList.remove('slideout');
-    containerEleven.classList.add('show');
-    modalEleven.classList.add('slidein');
-    images = modalElevenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalTwelve.onclick = () => {
-    modalTwelve.classList.remove('slideout');
-    containerTwelve.classList.add('show');
-    modalTwelve.classList.add('slidein');
-    images = modalTwelveImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalThirteen.onclick = () => {
-    modalThirteen.classList.remove('slideout');
-    containerThirteen.classList.add('show');
-    modalThirteen.classList.add('slidein');
-    images = modalThirteenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalFourteen.onclick = () => {
-    modalFourteen.classList.remove('slideout');
-    containerFourteen.classList.add('show');
-    modalFourteen.classList.add('slidein');
-    images = modalFourteenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalFifteen.onclick = () => {
-    modalFifteen.classList.remove('slideout');
-    containerFifteen.classList.add('show');
-    modalFifteen.classList.add('slidein');
-    images = modalFifteenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
+// openModalEleven.onclick = () => {
+//     modalEleven.classList.remove('slideout');
+//     containerEleven.classList.add('show');
+//     modalEleven.classList.add('slidein');
+//     images = modalElevenImgs;
+//     currentImg.forEach(element => {
+//         element.src = images[0];
+//     })
+// }
+// openModalTwelve.onclick = () => {
+//     modalTwelve.classList.remove('slideout');
+//     containerTwelve.classList.add('show');
+//     modalTwelve.classList.add('slidein');
+//     images = modalTwelveImgs;
+//     currentImg.forEach(element => {
+//         element.src = images[0];
+//     })
+// }
+// openModalThirteen.onclick = () => {
+//     modalThirteen.classList.remove('slideout');
+//     containerThirteen.classList.add('show');
+//     modalThirteen.classList.add('slidein');
+//     images = modalThirteenImgs;
+//     currentImg.forEach(element => {
+//         element.src = images[0];
+//     })
+// }
+// openModalFourteen.onclick = () => {
+//     modalFourteen.classList.remove('slideout');
+//     containerFourteen.classList.add('show');
+//     modalFourteen.classList.add('slidein');
+//     images = modalFourteenImgs;
+//     currentImg.forEach(element => {
+//         element.src = images[0];
+//     })
+// }
+// openModalFifteen.onclick = () => {
+//     modalFifteen.classList.remove('slideout');
+//     containerFifteen.classList.add('show');
+//     modalFifteen.classList.add('slidein');
+//     images = modalFifteenImgs;
+//     currentImg.forEach(element => {
+//         element.src = images[0];
+//     })
+// }
 openModalSixteen.onclick = () => {
     modalSixteen.classList.remove('slideout');
     containerSixteen.classList.add('show');
     modalSixteen.classList.add('slidein');
     images = modalSixteenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalSeventeen.onclick = () => {
+    modalSeventeen.classList.remove('slideout');
+    containerSeventeen.classList.add('show');
+    modalSeventeen.classList.add('slidein');
+    images = modalSeventeenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalEighteen.onclick = () => {
+    modalEighteen.classList.remove('slideout');
+    containerEighteen.classList.add('show');
+    modalEighteen.classList.add('slidein');
+    images = modalEighteenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalNineteen.onclick = () => {
+    modalNineteen.classList.remove('slideout');
+    containerNineteen.classList.add('show');
+    modalNineteen.classList.add('slidein');
+    images = modalNineteenImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalTwenty.onclick = () => {
+    modalTwenty.classList.remove('slideout');
+    containerTwenty.classList.add('show');
+    modalTwenty.classList.add('slidein');
+    images = modalTwentyImgs;
+    currentImg.forEach(element => {
+        element.src = images[0];
+    })
+}
+openModalTwentyOne.onclick = () => {
+    modalTwentyOne.classList.remove('slideout');
+    containerTwentyOne.classList.add('show');
+    modalTwentyOne.classList.add('slidein');
+    images = modalTwentyOneImgs;
     currentImg.forEach(element => {
         element.src = images[0];
     })
@@ -355,56 +428,101 @@ closeModalTen.onclick = () => {
     }, 650);
     currentIndex = 0
 }
-closeModalEleven.onclick = () => {
-    modalEleven.classList.remove('slidein');
-    modalEleven.classList.add('slideout');
-    setTimeout(() => {
-        containerEleven.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalTwelve.onclick = () => {
-    modalTwelve.classList.remove('slidein');
-    modalTwelve.classList.add('slideout');
-    setTimeout(() => {
-        containerTwelve.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalThirteen.onclick = () => {
-    modalThirteen.classList.remove('slidein');
-    modalThirteen.classList.add('slideout');
-    setTimeout(() => {
-        containerThirteen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalFourteen.onclick = () => {
-    modalFourteen.classList.remove('slidein');
-    modalFourteen.classList.add('slideout');
-    setTimeout(() => {
-        containerFourteen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalFifteen.onclick = () => {
-    modalFifteen.classList.remove('slidein');
-    modalFifteen.classList.add('slideout');
-    setTimeout(() => {
-        containerFifteen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
+// closeModalEleven.onclick = () => {
+//     modalEleven.classList.remove('slidein');
+//     modalEleven.classList.add('slideout');
+//     setTimeout(() => {
+//         containerEleven.classList.remove('show');
+//         images = [];
+//     }, 650);
+//     currentIndex = 0
+// }
+// closeModalTwelve.onclick = () => {
+//     modalTwelve.classList.remove('slidein');
+//     modalTwelve.classList.add('slideout');
+//     setTimeout(() => {
+//         containerTwelve.classList.remove('show');
+//         images = [];
+//     }, 650);
+//     currentIndex = 0
+// }
+// closeModalThirteen.onclick = () => {
+//     modalThirteen.classList.remove('slidein');
+//     modalThirteen.classList.add('slideout');
+//     setTimeout(() => {
+//         containerThirteen.classList.remove('show');
+//         images = [];
+//     }, 650);
+//     currentIndex = 0
+// }
+// closeModalFourteen.onclick = () => {
+//     modalFourteen.classList.remove('slidein');
+//     modalFourteen.classList.add('slideout');
+//     setTimeout(() => {
+//         containerFourteen.classList.remove('show');
+//         images = [];
+//     }, 650);
+//     currentIndex = 0
+// }
+// closeModalFifteen.onclick = () => {
+//     modalFifteen.classList.remove('slidein');
+//     modalFifteen.classList.add('slideout');
+//     setTimeout(() => {
+//         containerFifteen.classList.remove('show');
+//         images = [];
+//     }, 650);
+//     currentIndex = 0
+// }
 closeModalSixteen.onclick = () => {
     modalSixteen.classList.remove('slidein');
     modalSixteen.classList.add('slideout');
     setTimeout(() => {
         containerSixteen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalSeventeen.onclick = () => {
+    modalSeventeen.classList.remove('slidein');
+    modalSeventeen.classList.add('slideout');
+    setTimeout(() => {
+        containerSeventeen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalEighteen.onclick = () => {
+    modalEighteen.classList.remove('slidein');
+    modalEighteen.classList.add('slideout');
+    setTimeout(() => {
+        containerEighteen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalNineteen.onclick = () => {
+    modalNineteen.classList.remove('slidein');
+    modalNineteen.classList.add('slideout');
+    setTimeout(() => {
+        containerNineteen.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalTwenty.onclick = () => {
+    modalTwenty.classList.remove('slidein');
+    modalTwenty.classList.add('slideout');
+    setTimeout(() => {
+        containerTwenty.classList.remove('show');
+        images = [];
+    }, 650);
+    currentIndex = 0
+}
+closeModalTwentyOne.onclick = () => {
+    modalTwentyOne.classList.remove('slidein');
+    modalTwentyOne.classList.add('slideout');
+    setTimeout(() => {
+        containerTwentyOne.classList.remove('show');
         images = [];
     }, 650);
     currentIndex = 0
