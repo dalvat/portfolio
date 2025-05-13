@@ -1070,9 +1070,11 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 625px){
     .home,
-    .services,
     .portfolio{
         padding-bottom: 5rem;
+    }
+    .services{
+        padding-bottom: 1rem;
     }
     .about,
     .contact{
@@ -1142,6 +1144,9 @@ input::-webkit-inner-spin-button {
     #currentImg{
         width: 60vw;
         height: auto;
+    }
+    .experienceLink{
+        padding-top: 1.5rem;
     }
 }
 
