@@ -1,605 +1,472 @@
-// mobile menu toggle
-let toggleMenu = document.querySelector('#toggleMenu');
-let navbar = document.querySelector('.navbar');
+document.addEventListener("DOMContentLoaded", () => {
+    // mobile menu toggle
+    const toggleMenu = document.querySelector("#toggleMenu");
+    const navbar = document.querySelector(".navbar");
 
-toggleMenu.onclick = () => {
-    toggleMenu.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-}
-
-// navbar text highlighting when clicking or scrolling
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
-
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop -150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
-
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
+    if (toggleMenu && navbar) {
+        toggleMenu.onclick = () => {
+            toggleMenu.classList.toggle("bx-x");
+            navbar.classList.toggle("active");
         };
+    }
+
+    // navbar text highlighting when clicking or scrolling
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("header nav a");
+    const header = document.querySelector("header");
+
+    window.onscroll = () => {
+        sections.forEach((sec) => {
+            const top = window.scrollY;
+            const offset = sec.offsetTop - 150;
+            const height = sec.offsetHeight;
+            const id = sec.getAttribute("id");
+
+            if (top >= offset && top < offset + height) {
+                navLinks.forEach((links) => {
+                    links.classList.remove("active");
+                });
+
+                const activeLink = document.querySelector(`header nav a[href*="${id}"]`);
+                if (activeLink) activeLink.classList.add("active");
+            }
+        });
+
+        if (header) {
+            header.classList.toggle("sticky", window.scrollY > 200);
+        }
+
+        if (toggleMenu && navbar) {
+            toggleMenu.classList.remove("bx-x");
+            navbar.classList.remove("active");
+        }
+    };
+
+    // typed text in home section
+    if (window.Typed && document.querySelector(".typedRoles")) {
+        new Typed(".typedRoles", {
+            strings: ["3D Modeler", "3D Visualiser", "CAD Specialist"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1000,
+            loop: true,
+        });
+    }
+    // service lightbox data
+    const serviceModal = document.querySelector("#serviceModal");
+    const serviceModalIcon = document.querySelector("#serviceModalIcon");
+    const serviceModalTitle = document.querySelector("#serviceModalTitle");
+    const serviceModalText = document.querySelector("#serviceModalText");
+    const serviceModalClose = document.querySelector("#serviceModalClose");
+
+    const openModalOne = document.querySelector("#openModalOne");
+    const openModalTwo = document.querySelector("#openModalTwo");
+    const openModalThree = document.querySelector("#openModalThree");
+
+    const serviceContent = {
+        one: {
+            icon: "bx bx-cube-alt",
+            title: "3D Modeling",
+            text: "My background in CAD provided a natural pathway into 3D modeling, as it led me to explore BIM and 3D modeling through applications like Revit, Navisworks, and 3DS Max.<br><br>As a 3D Modeler, I specialize in creating, modifying, and refining detailed models and assets for large-scale, high-profile projects, including Olympic Games venues. I work with industry-standard tools such as Blender and Unreal Engine to develop accurate and highly detailed 3D environments that support event planning, visualisation, and real-time simulation.<br><br>My strong background in CAD allows me to interpret complex technical drawings and accurately extract key details and dimensions to ensure all modeled elements are modeled and placed with precision. This includes creating internal architectural elements such as walls, doors, floor slabs, ramps, and stairs within existing models to match real-world conditions and design intent.<br><br>I'm proficient at accurately overlaying 2D details within 3D geometry to identify and correct inconsistencies, ensuring models are not only visually realistic but also technically sound. Whether modeling from scratch or refining existing assets, I focus on delivering clean, optimized models that are ready for integration into larger workflows and platforms."
+        },
+        two: {
+            icon: "bx bx-landscape",
+            title: "3D Visualisation",
+            text: "As a 3D Visualiser, I create high-quality visuals and immersive walkthroughs that bring architectural and design concepts to life. Drawing on my expertise in 3D modeling, CAD and rendering tools, I transform technical drawings and models into compelling visual content that communicates ideas clearly and powerfully.<br><br>I produce still renders and animated walkthrough videos tailored for presentations, planning submissions, client pitches, or marketing materials. My visualisations are designed to reflect real-world materials, lighting, and spatial context - helping clients, stakeholders, and teams better understand and engage with a project long before construction begins.<br><br>Using tools such as Blender, Photoshop and Twinmotion I focus on clarity, realism and atmosphere to ensure each scene accurately represents the intent and quality of the design. Whether for architecture, interiors, or external environments, I deliver visuals that inform, impress, and inspire."
+        },
+        three: {
+            icon: "bx bx-cross",
+            title: "CAD Expertise",
+            text: "With over 12 years experience working with various CAD applications, my expertise include:<br><br><b>Technical Drawing & Drafting:</b><br>Creation of accurate CAD drawings, including floorplans, lease and ownership plans, M&E layouts, and UK Land Registry-compliant plans to support planning applications.<br><br><b>Surveying & Data Capture:</b><br>Conducting measured building surveys to accurately capture all architectural details and building services, ensuring the production of precise plans that reflect all captured elements.<br><br><b>CAD File Optimisation:</b><br>Streamlining CAD files for improved performance, reviewing and correcting inconstencies.<br><br><b>Technical Support:</b><br>Providing technical support for CAD applications, with hands-on experience in AutoCAD, AutoCAD Map3D and Autodesk Fusion for both drafting and CAD/CAM workflows."
+        }
+    };
+
+    function openServiceModal(key) {
+        if (!serviceModal || !serviceModalIcon || !serviceModalTitle || !serviceModalText) return;
+
+        const data = serviceContent[key];
+        if (!data) return;
+
+        serviceModalIcon.className = data.icon;
+        serviceModalTitle.textContent = data.title;
+        serviceModalText.innerHTML = data.text;
+
+        serviceModal.setAttribute("aria-hidden", "false");
+        serviceModal.classList.add("show");
+    }
+
+    function closeServiceModal() {
+        if (!serviceModal) return;
+
+        serviceModal.setAttribute("aria-hidden", "true");
+        serviceModal.classList.remove("show");
+    }
+
+    if (openModalOne) {
+        openModalOne.onclick = () => openServiceModal("one");
+    }
+
+    if (openModalTwo) {
+        openModalTwo.onclick = () => openServiceModal("two");
+    }
+
+    if (openModalThree) {
+        openModalThree.onclick = () => openServiceModal("three");
+    }
+
+    if (serviceModalClose) {
+        serviceModalClose.onclick = closeServiceModal;
+    }
+
+    if (serviceModal) {
+        serviceModal.onclick = (event) => {
+            if (event.target === serviceModal) {
+                closeServiceModal();
+            }
+        };
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && serviceModal && serviceModal.classList.contains("show")) {
+            closeServiceModal();
+        }
     });
+    // testimonials section
+    const testimonials = [
+        {
+            quote:
+                "David produced high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments. From the first scoping call to final delivery, his work was outstanding. The visuals have given us a much clearer understanding of how the units will integrate into real-world infrastructure, and the roundabout render is now our go-to asset for presentation. He delivered ahead of schedule, responded quickly to feedback, and provided excellent value. We would happily work with him again and recommend him without hesitation.",
+            name: "Simon Oliver MEng",
+            company: "Air View Engineering Ltd.",
+            image: "./assets/images/simon_oliver.jpg",
+        },
+    ];
 
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 200);
+    const testimonialsGrid = document.getElementById("testimonialsGrid");
 
-    toggleMenu.classList.remove('bx-x');
-    navbar.classList.remove('active'); 
-};
+    if (testimonialsGrid) {
+        testimonialsGrid.innerHTML = testimonials
+            .map(
+                (testimonial) => `
+                <article class="testimonial-card">
+                    <div class="testimonial__avatar">
+                        <img src="${testimonial.image}" alt="${testimonial.name}" />
+                    </div>
 
-// typed text in home section
-const typed = new Typed('.typedRoles', {
-    strings: ['3D Modeler', '3D Visualiser', 'CAD Specialist'],
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 1000,
-    loop: true
+                    <div class="testimonial__content">
+                        <p class="testimonial__quote">${testimonial.quote}</p>
+                        <div class="testimonial__meta">
+                            <h3 class="testimonial__name">${testimonial.name}</h3>
+                            <p class="testimonial__company">${testimonial.company}</p>
+                        </div>
+                    </div>
+                </article>
+            `
+            )
+            .join("");
+    }
+
+    // portfolio lightbox data
+    const portfolioItems = [
+        {
+            category: "3D Visualisation",
+            title: "Roundabout Scene",
+            text: "3D visualization of a Direct Air Capture system shown in location next to a typical UK style roundabout.",
+            image: "./assets/images/roundabout-scene-1.png",
+            chips: ["Visualisation", "Twinmotion", "Debranded"],
+            gallery: [
+                "./assets/images/roundabout-scene-1.png",
+                "./assets/images/roundabout-scene-2.png",
+                "./assets/images/roundabout-scene-3.png",
+                "./assets/images/roundabout-scene-4.png",
+                "./assets/images/roundabout-scene-blender-1.png",
+                "./assets/images/roundabout-scene-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Modeling",
+            title: "Glazed Façade",
+            text: "Complete façade of a temporary sports facility accurately modeled using technical drawings as reference.",
+            image: "./assets/images/facade-ext-1.png",
+            chips: ["Blender", "Façade", "Architectural"],
+            gallery: [
+                "./assets/images/facade-ext-1.png",
+                "./assets/images/facade-ext-2.png",
+                "./assets/images/facade-int-1.png",
+                "./assets/images/facade-int-2.png",
+                "./assets/images/facade-blender.png",
+                "./assets/images/facade-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Modeling",
+            title: "Internal Layout",
+            text: "Internal elements added to an existing façade only model using floorplans and cross-sections as reference.",
+            image: "./assets/images/internal-layout-2.png",
+            chips: ["Blender", "Internal Elements", "3D CAD"],
+            gallery: [
+                "./assets/images/internal-layout-2.png",
+                "./assets/images/internal-layout-1.png",
+                "./assets/images/internal-layout-3.png",
+                "./assets/images/internal-layout-4.png",
+                "./assets/images/internal-layout-blender-1.png",
+                "./assets/images/internal-layout-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Modeling",
+            title: "Changing Room",
+            text: "Existing changing room in a stadium modeled in detail using reference images acquired through research.",
+            image: "./assets/images/changing-room-1.png",
+            chips: ["Blender", "Furniture", "Sports Venue"],
+            gallery: [
+                "./assets/images/changing-room-1.png",
+                "./assets/images/changing-room-2.png",
+                "./assets/images/changing-room-blender-1.png",
+                "./assets/images/changing-room-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Modeling",
+            title: "Golf Course",
+            text: "Existing topographical landscape model modified to incorporate sand bunkers using a site plan as reference.",
+            image: "./assets/images/golf-bunkers-2.png",
+            chips: ["Blender", "3D Topography", "Landscape"],
+            gallery: [
+                "./assets/images/golf-bunkers-2.png",
+                "./assets/images/golf-bunkers-1.png",
+                "./assets/images/golf-bunkers-3.png",
+                "./assets/images/golf-bunkers-blender-1.png",
+                "./assets/images/golf-bunkers-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Modeling",
+            title: "Scaffolding Bridge",
+            text: "Highly detailed scaffolding bridge structure and supports created using design drawings as reference.",
+            image: "./assets/images/scaffolding-bridge-1.png",
+            chips: ["Blender", "Structure", "Sports Venue"],
+            gallery: [
+                "./assets/images/scaffolding-bridge-1.png",
+                "./assets/images/scaffolding-bridge-2.png",
+                "./assets/images/scaffolding-bridge-3.png",
+                "./assets/images/scaffolding-bridge-blender-1.png",
+                "./assets/images/scaffolding-bridge-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Modeling",
+            title: "Context Building",
+            text: "School buildings added to sports venue model to provide valuable context, created from limited reference images.",
+            image: "./assets/images/context-building-1.png",
+            chips: ["Blender", "Context", "Sports Venue"],
+            gallery: [
+                "./assets/images/context-building-1.png",
+                "./assets/images/context-building-2.png",
+                "./assets/images/context-building-3.png",
+                "./assets/images/context-building-blender-1.png",
+                "./assets/images/context-building-blender-2.png",
+            ],
+        },
+        {
+            category: "2D CAD",
+            title: "Building Estate",
+            text: "Large-format estate map created from GIS and CAD data for planning and estate management.",
+            image: "./assets/images/estate-map-1.png",
+            chips: ["2D Drafting", "GIS", "Mapping"],
+            gallery: [
+                "./assets/images/estate-map-1.png",
+                "./assets/images/estate-map-cad-1.png",
+            ],
+        },
+        {
+            category: "2D CAD",
+            title: "Stokes Bay Memorial",
+            text: "Planning application drawings showing memorial placement, orientation, and site relationship.",
+            image: "./assets/images/Stokes Bay Memorial - Design Concept Plan.png",
+            chips: ["2D Drafting", "Mapping", "Planning"],
+            gallery: [
+                "./assets/images/Stokes Bay Memorial - Design Concept Plan.png",
+                "./assets/images/Stokes Bay Memorial - Schedule.png",
+                "./assets/images/Stokes Bay Memorial CAD.png",
+            ],
+        },
+        {
+            category: "2D CAD",
+            title: "Ownership Breakdown",
+            text: "Plan showing details of land sold since acquisition and the land within the organisation's control.",
+            image: "./assets/images/ownership-breakdown-1.png",
+            chips: ["2D Drafting", "Ownership", "Historical"],
+            gallery: [
+                "./assets/images/ownership-breakdown-1.png",
+                "./assets/images/ownership-breakdown-cad-1.png",
+            ],
+        },
+        {
+            category: "2D CAD",
+            title: "Acquisition Plan",
+            text: "Detailed acquisition plan showing how a site was acquired over more than a 100 year period.",
+            image: "./assets/images/acquisition-plan-1.png",
+            chips: ["2D Drafting", "Acquisition", "Historical"],
+            gallery: [
+                "./assets/images/acquisition-plan-1.png",
+                "./assets/images/acquisition-plan-2.png",
+                "./assets/images/acquisition-plan-3.png",
+                "./assets/images/acquisition-plan-cad-1.png",
+            ],
+        },
+        {
+            category: "2D CAD",
+            title: "Property Comparison",
+            text: "Comparison drawing prepared to show similarities between two properties identified for strategic acquisition.",
+            image: "./assets/images/property-comparison-1.png",
+            chips: ["2D Drafting", "Comparison", "Planning"],
+            gallery: [
+                "./assets/images/property-comparison-1.png",
+                "./assets/images/property-comparison-cad-1.png",
+            ],
+        },
+        {
+            category: "2D CAD",
+            title: "Constraints Plan",
+            text: "Ownership plan produced to detail legal constraints and obligations associated with the land in question.",
+            image: "./assets/images/constraints-plan-1.png",
+            chips: ["2D Drafting", "Ownership", "Constraints"],
+            gallery: [
+                "./assets/images/constraints-plan-1.png",
+                "./assets/images/constraints-plan-cad-1.png",
+            ],
+        },
+    ];
+
+    const grid = document.getElementById("portfolioGrid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxBackdrop = document.getElementById("lightboxBackdrop");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxText = document.getElementById("lightboxText");
+
+    if (grid && lightbox && lightboxBackdrop && lightboxClose && lightboxPrev && lightboxNext && lightboxImage && lightboxTitle && lightboxText) {
+        const state = {
+            itemIndex: 0,
+            imageIndex: 0,
+            focusReturn: null,
+        };
+
+        grid.innerHTML = portfolioItems
+            .map(
+                (item, index) => `
+                <button class="portfolio-card" type="button" data-index="${index}" aria-label="Open ${item.title}">
+                    <img class="portfolio-card__image" src="${item.image}" alt="${item.title}" loading="lazy" />
+                    <div class="portfolio-card__body">
+                        <span class="portfolio-card__category">${item.category}</span>
+                        <h3 class="portfolio-card__title">${item.title}</h3>
+                        <p class="portfolio-card__text">${item.text}</p>
+                        <div class="portfolio-card__chips">
+                            ${item.chips.map((chip) => `<span class="portfolio-chip">${chip}</span>`).join("")}
+                        </div>
+                    </div>
+                </button>
+            `
+            )
+            .join("");
+
+        const getItem = () => portfolioItems[state.itemIndex];
+
+        const renderLightbox = () => {
+            const item = getItem();
+            const image = item.gallery[state.imageIndex];
+
+            lightboxImage.src = image;
+            lightboxImage.alt = `${item.title} image ${state.imageIndex + 1} of ${item.gallery.length}`;
+            lightboxTitle.textContent = item.title;
+            lightboxText.textContent = item.text;
+
+            const hasMultiple = item.gallery.length > 1;
+            lightboxPrev.style.display = hasMultiple ? "" : "none";
+            lightboxNext.style.display = hasMultiple ? "" : "none";
+        };
+
+        const openLightbox = (index) => {
+            state.itemIndex = index;
+            state.imageIndex = 0;
+            state.focusReturn = document.activeElement;
+
+            renderLightbox();
+            lightbox.classList.add("is-open");
+            lightbox.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-open");
+
+            lightboxClose.focus();
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove("is-open");
+            lightbox.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lightbox-open");
+
+            if (state.focusReturn && typeof state.focusReturn.focus === "function") {
+                state.focusReturn.focus();
+            }
+        };
+
+        const nextImage = () => {
+            const item = getItem();
+            if (item.gallery.length <= 1) return;
+            state.imageIndex = (state.imageIndex + 1) % item.gallery.length;
+            renderLightbox();
+        };
+
+        const prevImage = () => {
+            const item = getItem();
+            if (item.gallery.length <= 1) return;
+            state.imageIndex = (state.imageIndex - 1 + item.gallery.length) % item.gallery.length;
+            renderLightbox();
+        };
+
+        grid.addEventListener("click", (event) => {
+            const card = event.target.closest(".portfolio-card");
+            if (!card) return;
+            openLightbox(Number(card.dataset.index));
+        });
+
+        lightboxBackdrop.addEventListener("click", closeLightbox);
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightboxNext.addEventListener("click", nextImage);
+        lightboxPrev.addEventListener("click", prevImage);
+
+        document.addEventListener("keydown", (event) => {
+            if (!lightbox.classList.contains("is-open")) return;
+
+            if (event.key === "Escape") closeLightbox();
+            if (event.key === "ArrowRight") nextImage();
+            if (event.key === "ArrowLeft") prevImage();
+        });
+
+        let touchStartX = 0;
+
+        lightbox.addEventListener(
+            "touchstart",
+            (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            },
+            { passive: true }
+        );
+
+        lightbox.addEventListener(
+            "touchend",
+            (e) => {
+                const touchEndX = e.changedTouches[0].screenX;
+                const delta = touchEndX - touchStartX;
+
+                if (Math.abs(delta) < 50) return;
+                if (delta < 0) nextImage();
+                else prevImage();
+            },
+            { passive: true }
+        );
+    }
 });
-
-// modals open consts
-const openModalOne = document.querySelector('#openModalOne');
-const openModalTwo = document.querySelector('#openModalTwo');
-const openModalThree = document.querySelector('#openModalThree');
-const openModalFour = document.querySelector('#openModalFour');
-const openModalFive = document.querySelector('#openModalFive');
-const openModalSix = document.querySelector('#openModalSix');
-const openModalSeven = document.querySelector('#openModalSeven');
-const openModalEight = document.querySelector('#openModalEight');
-const openModalNine = document.querySelector('#openModalNine');
-const openModalTen = document.querySelector('#openModalTen');
-const openModalEleven = document.querySelector('#openModalEleven');
-const openModalTwelve = document.querySelector('#openModalTwelve');
-const openModalThirteen = document.querySelector('#openModalThirteen');
-const openModalFourteen = document.querySelector('#openModalFourteen');
-const openModalFifteen = document.querySelector('#openModalFifteen');
-const openModalSixteen = document.querySelector('#openModalSixteen');
-const openModalSeventeen = document.querySelector('#openModalSeventeen');
-const openModalEighteen = document.querySelector('#openModalEighteen');
-const openModalNineteen = document.querySelector('#openModalNineteen');
-const openModalTwenty = document.querySelector('#openModalTwenty');
-const openModalTwentyOne = document.querySelector('#openModalTwentyOne');
-// modal containers consts
-const modalContainers = document.querySelectorAll('.modalContainer:not(.preview)');
-const containerOne = document.querySelector('#modalContainerOne');
-const containerTwo = document.querySelector('#modalContainerTwo');
-const containerThree = document.querySelector('#modalContainerThree');
-const containerFour = document.querySelector('#modalContainerFour');
-const containerFive = document.querySelector('#modalContainerFive');
-const containerSix = document.querySelector('#modalContainerSix');
-const containerSeven = document.querySelector('#modalContainerSeven');
-const containerEight = document.querySelector('#modalContainerEight');
-const containerNine = document.querySelector('#modalContainerNine');
-const containerTen = document.querySelector('#modalContainerTen');
-const containerEleven = document.querySelector('#modalContainerEleven');
-const containerTwelve = document.querySelector('#modalContainerTwelve');
-const containerThirteen = document.querySelector('#modalContainerThirteen');
-const containerFourteen = document.querySelector('#modalContainerFourteen');
-const containerFifteen = document.querySelector('#modalContainerFifteen');
-const containerSixteen = document.querySelector('#modalContainerSixteen');
-const containerSeventeen = document.querySelector('#modalContainerSeventeen');
-const containerEighteen = document.querySelector('#modalContainerEighteen');
-const containerNineteen = document.querySelector('#modalContainerNineteen');
-const containerTwenty = document.querySelector('#modalContainerTwenty');
-const containerTwentyOne = document.querySelector('#modalContainerTwentyOne');
-// modal close consts
-const closeModalOne = document.querySelector('#closeModalOne');
-const closeModalTwo = document.querySelector('#closeModalTwo');
-const closeModalThree = document.querySelector('#closeModalThree');
-const closeModalFour = document.querySelector('#closeModalFour');
-const closeModalFive = document.querySelector('#closeModalFive');
-const closeModalSix = document.querySelector('#closeModalSix');
-const closeModalSeven = document.querySelector('#closeModalSeven');
-const closeModalEight = document.querySelector('#closeModalEight');
-const closeModalNine = document.querySelector('#closeModalNine');
-const closeModalTen = document.querySelector('#closeModalTen');
-const closeModalEleven = document.querySelector('#closeModalEleven');
-const closeModalTwelve = document.querySelector('#closeModalTwelve');
-const closeModalThirteen = document.querySelector('#closeModalThirteen');
-const closeModalFourteen = document.querySelector('#closeModalFourteen');
-const closeModalFifteen = document.querySelector('#closeModalFifteen');
-const closeModalSixteen = document.querySelector('#closeModalSixteen');
-const closeModalSeventeen = document.querySelector('#closeModalSeventeen');
-const closeModalEighteen = document.querySelector('#closeModalEighteen');
-const closeModalNineteen = document.querySelector('#closeModalNineteen');
-const closeModalTwenty = document.querySelector('#closeModalTwenty');
-const closeModalTwentyOne = document.querySelector('#closeModalTwentyOne');
-// modal consts
-const modalOne = document.querySelector('.modal.one');
-const modalTwo = document.querySelector('.modal.two');
-const modalThree = document.querySelector('.modal.three');
-const modalFour = document.querySelector('.modal.four');
-const modalFive = document.querySelector('.modal.five');
-const modalSix = document.querySelector('.modal.six');
-const modalSeven = document.querySelector('.modal.seven');
-const modalEight = document.querySelector('.modal.eight');
-const modalNine = document.querySelector('.modal.nine');
-const modalTen = document.querySelector('.modal.ten');
-const modalEleven = document.querySelector('.modal.eleven');
-const modalTwelve = document.querySelector('.modal.twelve');
-const modalThirteen = document.querySelector('.modal.thirteen');
-const modalFourteen = document.querySelector('.modal.fourteen');
-const modalFifteen = document.querySelector('.modal.fifteen');
-const modalSixteen = document.querySelector('.modal.sixteen');
-const modalSeventeen = document.querySelector('.modal.seventeen');
-const modalEighteen = document.querySelector('.modal.eighteen');
-const modalNineteen = document.querySelector('.modal.nineteen');
-const modalTwenty = document.querySelector('.modal.twenty');
-const modalTwentyOne = document.querySelector('.modal.twentyone');
-
-// image gallery consts
-const imgGal = document.querySelectorAll('#imgGallery');
-const prevBtns = document.querySelectorAll('#previousButton');
-const nextBtns = document.querySelectorAll('#nextButton');
-// image arrays
-// 3d modelling
-const modalFourImgs = ['./assets/images/facade-blender.png', './assets/images/facade-blender-2.png', './assets/images/facade-ext-1.png', './assets/images/facade-ext-2.png', './assets/images/facade-int-1.png', './assets/images/facade-int-2.png'];
-const modalFiveImgs = ['./assets/images/internal-layout-blender-1.png', './assets/images/internal-layout-blender-2.png', './assets/images/internal-layout-1.png', './assets/images/internal-layout-2.png', './assets/images/internal-layout-3.png', './assets/images/internal-layout-4.png'];
-const modalSixImgs = ['./assets/images/changing-room-blender-1.png', './assets/images/changing-room-blender-2.png', './assets/images/changing-room-1.png', './assets/images/changing-room-2.png'];
-const modalSevenImgs = ['./assets/images/golf-bunkers-blender-1.png', './assets/images/golf-bunkers-blender-2.png', './assets/images/golf-bunkers-1.png', './assets/images/golf-bunkers-2.png', './assets/images/golf-bunkers-3.png'];
-const modalEightImgs = ['./assets/images/scaffolding-bridge-blender-1.png', './assets/images/scaffolding-bridge-blender-2.png', './assets/images/scaffolding-bridge-1.png', './assets/images/scaffolding-bridge-2.png', './assets/images/scaffolding-bridge-3.png'];
-const modalNineImgs = ['./assets/images/context-building-blender-1.png', './assets/images/context-building-blender-2.png', './assets/images/context-building-1.png', './assets/images/context-building-2.png', './assets/images/context-building-3.png'];
-// 3d visualisation
-const modalTenImgs = ['./assets/images/roundabout-scene-blender-1.png', './assets/images/roundabout-scene-blender-2.png', './assets/images/roundabout-scene-1.png', './assets/images/roundabout-scene-2.png', './assets/images/roundabout-scene-3.png', './assets/images/roundabout-scene-4.png'];
-const modalElevenImgs = [];
-const modalTwelveImgs = [];
-const modalThirteenImgs = [];
-const modalFourteenImgs = [];
-const modalFifteenImgs = [];
-// cad
-const modalSixteenImgs = ['./assets/images/estate-map-cad-1.png', './assets/images/estate-map-1.png'];
-const modalSeventeenImgs = ['./assets/images/Stokes Bay Memorial CAD.png', './assets/images/Stokes Bay Memorial - Design Concept Plan.png', './assets/images/Stokes Bay Memorial - Schedule.png'];
-const modalEighteenImgs = ['./assets/images/ownership-breakdown-cad-1.png', './assets/images/ownership-breakdown-1.png'];
-const modalNineteenImgs = ['./assets/images/acquisition-plan-cad-1.png', './assets/images/acquisition-plan-1.png', './assets/images/acquisition-plan-2.png', './assets/images/acquisition-plan-3.png'];
-const modalTwentyImgs = ['./assets/images/property-comparison-cad-1.png', './assets/images/property-comparison-1.png'];
-const modalTwentyOneImgs = ['./assets/images/constraints-plan-cad-1.png', './assets/images/constraints-plan-1.png'];
-
-// image gallery variables
-let images = [];
-let currentIndex = 0;
-let currentImg = document.querySelectorAll('#currentImg');
-
-// open modals onclick functions
-openModalOne.onclick = () => {
-    modalOne.classList.remove('slideout');
-    containerOne.classList.add('show');
-    modalOne.classList.add('slidein');
-}
-openModalTwo.onclick = () => {
-    modalTwo.classList.remove('slideout');
-    containerTwo.classList.add('show');
-    modalTwo.classList.add('slidein');
-}
-openModalThree.onclick = () => {
-    modalThree.classList.remove('slideout');
-    containerThree.classList.add('show');
-    modalThree.classList.add('slidein');
-}
-openModalFour.onclick = () => {
-    modalFour.classList.remove('slideout');
-    containerFour.classList.add('show');
-    modalFour.classList.add('slidein');
-    images = modalFourImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalFive.onclick = () => {
-    modalFive.classList.remove('slideout');
-    containerFive.classList.add('show');
-    modalFive.classList.add('slidein');
-    images = modalFiveImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalSix.onclick = () => {
-    modalSix.classList.remove('slideout');
-    containerSix.classList.add('show');
-    modalSix.classList.add('slidein');
-    images = modalSixImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalSeven.onclick = () => {
-    modalSeven.classList.remove('slideout');
-    containerSeven.classList.add('show');
-    modalSeven.classList.add('slidein');
-    images = modalSevenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalEight.onclick = () => {
-    modalEight.classList.remove('slideout');
-    containerEight.classList.add('show');
-    modalEight.classList.add('slidein');
-    images = modalEightImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalNine.onclick = () => {
-    modalNine.classList.remove('slideout');
-    containerNine.classList.add('show');
-    modalNine.classList.add('slidein');
-    images = modalNineImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalTen.onclick = () => {
-    modalTen.classList.remove('slideout');
-    containerTen.classList.add('show');
-    modalTen.classList.add('slidein');
-    images = modalTenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-// openModalEleven.onclick = () => {
-//     modalEleven.classList.remove('slideout');
-//     containerEleven.classList.add('show');
-//     modalEleven.classList.add('slidein');
-//     images = modalElevenImgs;
-//     currentImg.forEach(element => {
-//         element.src = images[0];
-//     })
-// }
-// openModalTwelve.onclick = () => {
-//     modalTwelve.classList.remove('slideout');
-//     containerTwelve.classList.add('show');
-//     modalTwelve.classList.add('slidein');
-//     images = modalTwelveImgs;
-//     currentImg.forEach(element => {
-//         element.src = images[0];
-//     })
-// }
-// openModalThirteen.onclick = () => {
-//     modalThirteen.classList.remove('slideout');
-//     containerThirteen.classList.add('show');
-//     modalThirteen.classList.add('slidein');
-//     images = modalThirteenImgs;
-//     currentImg.forEach(element => {
-//         element.src = images[0];
-//     })
-// }
-// openModalFourteen.onclick = () => {
-//     modalFourteen.classList.remove('slideout');
-//     containerFourteen.classList.add('show');
-//     modalFourteen.classList.add('slidein');
-//     images = modalFourteenImgs;
-//     currentImg.forEach(element => {
-//         element.src = images[0];
-//     })
-// }
-// openModalFifteen.onclick = () => {
-//     modalFifteen.classList.remove('slideout');
-//     containerFifteen.classList.add('show');
-//     modalFifteen.classList.add('slidein');
-//     images = modalFifteenImgs;
-//     currentImg.forEach(element => {
-//         element.src = images[0];
-//     })
-// }
-openModalSixteen.onclick = () => {
-    modalSixteen.classList.remove('slideout');
-    containerSixteen.classList.add('show');
-    modalSixteen.classList.add('slidein');
-    images = modalSixteenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalSeventeen.onclick = () => {
-    modalSeventeen.classList.remove('slideout');
-    containerSeventeen.classList.add('show');
-    modalSeventeen.classList.add('slidein');
-    images = modalSeventeenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalEighteen.onclick = () => {
-    modalEighteen.classList.remove('slideout');
-    containerEighteen.classList.add('show');
-    modalEighteen.classList.add('slidein');
-    images = modalEighteenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalNineteen.onclick = () => {
-    modalNineteen.classList.remove('slideout');
-    containerNineteen.classList.add('show');
-    modalNineteen.classList.add('slidein');
-    images = modalNineteenImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalTwenty.onclick = () => {
-    modalTwenty.classList.remove('slideout');
-    containerTwenty.classList.add('show');
-    modalTwenty.classList.add('slidein');
-    images = modalTwentyImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-openModalTwentyOne.onclick = () => {
-    modalTwentyOne.classList.remove('slideout');
-    containerTwentyOne.classList.add('show');
-    modalTwentyOne.classList.add('slidein');
-    images = modalTwentyOneImgs;
-    currentImg.forEach(element => {
-        element.src = images[0];
-    })
-}
-
-// close modals onclick functions
-closeModalOne.onclick = () => {
-    modalOne.classList.remove('slidein');
-    modalOne.classList.add('slideout');
-    setTimeout(() => {
-        containerOne.classList.remove('show');
-    }, 650)
-}
-closeModalTwo.onclick = () => {
-    modalTwo.classList.remove('slidein');
-    modalTwo.classList.add('slideout');
-    setTimeout(() => {
-        containerTwo.classList.remove('show');
-    }, 650)
-}
-closeModalThree.onclick = () => {
-    modalThree.classList.remove('slidein');
-    modalThree.classList.add('slideout');
-    setTimeout(() => {
-        containerThree.classList.remove('show');
-    }, 650)
-}
-closeModalFour.onclick = () => {
-    modalFour.classList.remove('slidein');
-    modalFour.classList.add('slideout');
-    setTimeout(() => {
-        containerFour.classList.remove('show');
-        images = [];
-    }, 650)
-    currentIndex = 0
-}
-closeModalFive.onclick = () => {
-    modalFive.classList.remove('slidein');
-    modalFive.classList.add('slideout');
-    setTimeout(() => {
-        containerFive.classList.remove('show');
-        images = [];
-    }, 650)
-    currentIndex = 0
-}
-closeModalSix.onclick = () => {
-    modalSix.classList.remove('slidein');
-    modalSix.classList.add('slideout');
-    setTimeout(() => {
-        containerSix.classList.remove('show');
-        images = [];
-    }, 650)
-    currentIndex = 0
-}
-closeModalSeven.onclick = () => {
-    modalSeven.classList.remove('slidein');
-    modalSeven.classList.add('slideout');
-    setTimeout(() => {
-        containerSeven.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalEight.onclick = () => {
-    modalEight.classList.remove('slidein');
-    modalEight.classList.add('slideout');
-    setTimeout(() => {
-        containerEight.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalNine.onclick = () => {
-    modalNine.classList.remove('slidein');
-    modalNine.classList.add('slideout');
-    setTimeout(() => {
-        containerNine.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalTen.onclick = () => {
-    modalTen.classList.remove('slidein');
-    modalTen.classList.add('slideout');
-    setTimeout(() => {
-        containerTen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-// closeModalEleven.onclick = () => {
-//     modalEleven.classList.remove('slidein');
-//     modalEleven.classList.add('slideout');
-//     setTimeout(() => {
-//         containerEleven.classList.remove('show');
-//         images = [];
-//     }, 650);
-//     currentIndex = 0
-// }
-// closeModalTwelve.onclick = () => {
-//     modalTwelve.classList.remove('slidein');
-//     modalTwelve.classList.add('slideout');
-//     setTimeout(() => {
-//         containerTwelve.classList.remove('show');
-//         images = [];
-//     }, 650);
-//     currentIndex = 0
-// }
-// closeModalThirteen.onclick = () => {
-//     modalThirteen.classList.remove('slidein');
-//     modalThirteen.classList.add('slideout');
-//     setTimeout(() => {
-//         containerThirteen.classList.remove('show');
-//         images = [];
-//     }, 650);
-//     currentIndex = 0
-// }
-// closeModalFourteen.onclick = () => {
-//     modalFourteen.classList.remove('slidein');
-//     modalFourteen.classList.add('slideout');
-//     setTimeout(() => {
-//         containerFourteen.classList.remove('show');
-//         images = [];
-//     }, 650);
-//     currentIndex = 0
-// }
-// closeModalFifteen.onclick = () => {
-//     modalFifteen.classList.remove('slidein');
-//     modalFifteen.classList.add('slideout');
-//     setTimeout(() => {
-//         containerFifteen.classList.remove('show');
-//         images = [];
-//     }, 650);
-//     currentIndex = 0
-// }
-closeModalSixteen.onclick = () => {
-    modalSixteen.classList.remove('slidein');
-    modalSixteen.classList.add('slideout');
-    setTimeout(() => {
-        containerSixteen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalSeventeen.onclick = () => {
-    modalSeventeen.classList.remove('slidein');
-    modalSeventeen.classList.add('slideout');
-    setTimeout(() => {
-        containerSeventeen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalEighteen.onclick = () => {
-    modalEighteen.classList.remove('slidein');
-    modalEighteen.classList.add('slideout');
-    setTimeout(() => {
-        containerEighteen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalNineteen.onclick = () => {
-    modalNineteen.classList.remove('slidein');
-    modalNineteen.classList.add('slideout');
-    setTimeout(() => {
-        containerNineteen.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalTwenty.onclick = () => {
-    modalTwenty.classList.remove('slidein');
-    modalTwenty.classList.add('slideout');
-    setTimeout(() => {
-        containerTwenty.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-closeModalTwentyOne.onclick = () => {
-    modalTwentyOne.classList.remove('slidein');
-    modalTwentyOne.classList.add('slideout');
-    setTimeout(() => {
-        containerTwentyOne.classList.remove('show');
-        images = [];
-    }, 650);
-    currentIndex = 0
-}
-
-// close modal by click outside of modal
-modalContainers.forEach(element => {
-    element.onclick= () => {
-        element.firstElementChild.classList.remove('slidein');
-        element.firstElementChild.classList.add('slideout');
-        setTimeout(() => {
-            element.classList.remove('show');
-        }, 650);
-        images = [];
-        currentIndex = 0
-    }
-})
-
-// image gallery onclick functions
-prevBtns.forEach(prevBtn => {
-    prevBtn.onclick = () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateImage();
-        };
-    }
-})
-nextBtns.forEach(nextBtn => {
-    nextBtn.onclick = () => {
-        if (currentIndex < images.length - 1) {
-            currentIndex++;
-            updateImage();
-        };
-    }
-})
-
-// update image function
-function updateImage() {
-    currentImg.forEach(element => {
-        element.classList.remove('fadeIn');
-        element.classList.add('fadeOut');
-        setTimeout(() => {
-            element.src = images[currentIndex];
-            setTimeout(() => {
-                element.classList.remove('fadeOut');
-            }, 100);
-            element.classList.add('fadeIn')
-        }, 400); 
-    });
-}
-
-//large image preview
-const containerLrgImg = document.querySelector('#modalContainerLargeImg');
-const modalImg = document.querySelector('.largeImg');
-const largeImg = document.querySelector('#largePreview');
-const closeModalImg = document.querySelector('#closeLargeImgModal')
-
-currentImg.forEach(img => {
-    img.onclick = () => {
-        containerLrgImg.classList.add('show');
-        modalImg.classList.add('slidein');
-        largeImg.src = images[currentIndex];
-    }
-})
-
-closeModalImg.onclick = () => {
-    modalImg.classList.remove('slidein');
-    modalImg.classList.add('slideout');
-    setTimeout(() => {
-        containerLrgImg.classList.remove('show');
-    }, 650);
-}
-
-containerLrgImg.onclick= () => {
-    modalImg.classList.remove('slidein');
-    modalImg.classList.add('slideout');
-    setTimeout(() => {
-        containerLrgImg.classList.remove('show');
-    }, 650);
-}
