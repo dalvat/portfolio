@@ -429,6 +429,14 @@ span {
     margin-right: 0.2rem;
 }
 
+.testimonial__quote::after {
+    content: "”";
+    color: var(--accent-colour);
+    font-size: 2.6rem;
+    line-height: 0;
+    margin-right: 0.2rem;
+}
+
 .testimonial__meta {
     display: flex;
     flex-direction: column;

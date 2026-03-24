@@ -170,17 +170,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioItems = [
         {
             category: "3D Visualisation",
+            title: "Warehouse Scene",
+            text: "3D visualization of a Direct Air Capture (DAC) system shown within a typical warehouse found in the UK.",
+            image: "./assets/images/warehouse-scene-1.png",
+            chips: ["Visualisation", "Twinmotion", "DAC"],
+            gallery: [
+                "./assets/images/warehouse-scene-1.png",
+                "./assets/images/warehouse-scene-2.png",
+                "./assets/images/warehouse-scene-3.png",
+                "./assets/images/warehouse-scene-4.png",
+                "./assets/images/warehouse-scene-blender-1.png",
+                "./assets/images/warehouse-scene-blender-2.png",
+            ],
+        },
+        {
+            category: "3D Visualisation",
             title: "Roundabout Scene",
-            text: "3D visualization of a Direct Air Capture system shown in location next to a typical UK style roundabout.",
+            text: "3D visualization of a Direct Air Capture (DAC) system shown next to a typical roundabout found in the UK.",
             image: "./assets/images/roundabout-scene-1.png",
-            chips: ["Visualisation", "Twinmotion", "Debranded"],
+            chips: ["Visualisation", "Twinmotion", "DAC"],
             gallery: [
                 "./assets/images/roundabout-scene-1.png",
                 "./assets/images/roundabout-scene-2.png",
                 "./assets/images/roundabout-scene-3.png",
                 "./assets/images/roundabout-scene-4.png",
-                "./assets/images/roundabout-scene-blender-1.png",
-                "./assets/images/roundabout-scene-blender-2.png",
+                "./assets/images/roundabout-scene-autocad-1.png",
+                "./assets/images/roundabout-scene-autocad-2.png",
             ],
         },
         {
