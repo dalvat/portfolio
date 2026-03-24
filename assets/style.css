@@ -324,6 +324,14 @@ span {
     margin-bottom: 3rem;
 }
 
+.servicesBox {
+    padding-bottom: 0;
+}
+
+.servicesBox.gridThree {
+    padding-bottom: 5rem;
+}
+
 .servicesButton {
     padding: 1rem 2rem;
     border-radius: 3rem;
@@ -701,10 +709,14 @@ body.lightbox-open {
 }
 
 .experienceLink {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
     padding: 1rem 2rem;
     border-radius: 3rem;
     background-color: var(--accent-colour-2);
     color: var(--text-colour);
+    text-align: center;
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
@@ -718,7 +730,7 @@ body.lightbox-open {
 }
 
 .studyButtonContainer {
-    padding: 1.5rem 0 1.5rem 0;
+    padding: 3rem 0 1.5rem 0;
 }
 
 .studyButton {
