@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const testimonials = [
         {
             quote:
-                "David produced high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments. From the first scoping call to final delivery, his work was outstanding. The visuals have given us a much clearer understanding of how the units will integrate into real-world infrastructure, and the roundabout render is now our go-to asset for presentation. He delivered ahead of schedule, responded quickly to feedback, and provided excellent value. We would happily work with him again and recommend him without hesitation.",
+                "David produced high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments. From the first scoping call to final delivery, his work was outstanding. The visuals have given us a much clearer understanding of how the units will integrate into real-world infrastructure, and the roundabout render is now our go-to asset for presentation. He delivered ahead of schedule, responded quickly to feedback, and provided excellent value. We would happily work with him again and recommend him without hesitation to anyone looking for top-tier visualisation services.",
             name: "Simon Oliver MEng",
             company: "Air View Engineering Ltd.",
             image: "./assets/images/simon_oliver.jpg",
