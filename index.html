@@ -391,8 +391,26 @@
         <i id="serviceModalIcon" class="bx bx-cube-alt"></i>
         <h1 class="modalTitle" id="serviceModalTitle"></h1>
         <p class="modalText" id="serviceModalText"></p>
-        <a id="serviceModalClose" class="modalButton"><i class="bx bx-x"></i></a>
+        <button id="serviceModalClose" class="modalCloseButton modalButton" type="button" aria-label="Close service modal">
+          <i class="bx bx-x"></i>
+        </button>
     </div>
+    </div>
+
+    <!-- testimonial modal -->
+    <div id="testimonialModal" class="modalContainer testimonialModal" aria-hidden="true">
+      <div id="testimonialModalBackdrop" class="modalBackdrop" aria-label="Close testimonial modal"></div>
+
+      <div class="modal testimonial">
+        <button id="testimonialModalClose" class="modalCloseButton modalButton" type="button" aria-label="Close testimonial modal">
+          <i class="bx bx-x"></i>
+        </button>
+
+        <img id="testimonialModalImage" class="testimonialModalImage" src="" alt="" />
+        <h3 id="testimonialModalName" class="testimonialModalName"></h3>
+        <p id="testimonialModalCompany" class="testimonialModalCompany"></p>
+        <p id="testimonialModalText" class="testimonialModalText"></p>
+      </div>
     </div>
 
     <!-- javascript -->

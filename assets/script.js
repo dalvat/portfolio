@@ -134,8 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
     // testimonials section
     const testimonials = [
         {
-            quote:
-                "David produced high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments. From the first scoping call to final delivery, his work was outstanding. The visuals have given us a much clearer understanding of how the units will integrate into real-world infrastructure, and the roundabout render is now our go-to asset for presentation. He delivered ahead of schedule, responded quickly to feedback, and provided excellent value. We would happily work with him again and recommend him without hesitation to anyone looking for top-tier visualisation services.",
+            shortQuote: `<span class="quoteMark">“…</span> From our very first scoping call to final delivery, his work has been outstanding <span class="quoteMark">…”</span>`,
+            fullQuote: `
+            <p>I recently engaged David to produce high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments—alongside a busy roundabout and inside a Warehouse Facility. From our very first scoping call to final delivery, his work has been outstanding.</p>
+            <ul>
+            <li><strong>Enhanced visualisation</strong> - The finished scenes have provided us with a far clearer view of how the deployed units will look and integrate with real-world infrastructure. The roundabout render, in particular, is now our go-to asset for demonstrating how the system blends seamlessly into existing landscapes.</li>
+            <li><strong>Speed & reliability</strong> - Even with numerous bespoke components to model, David delivered every milestone ahead of schedule and responded to feedback promptly, keeping our project timeline on track.</li>
+            <li><strong>Excellent value</strong> - For the quality and polish provided, David's rates were extremely competitive. The renders have already saved us considerable in-house design time, and their professional finish has exceeded our expectations.</li>
+            </ul>
+            <p>In short, we wouldn't hesitate to work with David again or recommend him to anyone needing top-tier visualisation services.</p>
+            `,
             name: "Simon Oliver MEng",
             company: "Air View Engineering Ltd.",
             image: "./assets/images/simon_oliver.jpg",
@@ -144,26 +152,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const testimonialsGrid = document.getElementById("testimonialsGrid");
 
-    if (testimonialsGrid) {
+    const testimonialModal = document.getElementById("testimonialModal");
+    const testimonialModalImage = document.getElementById("testimonialModalImage");
+    const testimonialModalName = document.getElementById("testimonialModalName");
+    const testimonialModalCompany = document.getElementById("testimonialModalCompany");
+    const testimonialModalText = document.getElementById("testimonialModalText");
+    const testimonialModalClose = document.getElementById("testimonialModalClose");
+    const testimonialModalBackdrop = document.getElementById("testimonialModalBackdrop");
+
+    if (testimonialsGrid && testimonialModal && testimonialModalImage && testimonialModalName && testimonialModalCompany && testimonialModalText) {
         testimonialsGrid.innerHTML = testimonials
             .map(
-                (testimonial) => `
+                (testimonial, index) => `
                 <article class="testimonial-card">
                     <div class="testimonial__avatar">
                         <img src="${testimonial.image}" alt="${testimonial.name}" />
                     </div>
 
                     <div class="testimonial__content">
-                        <p class="testimonial__quote">${testimonial.quote}</p>
+                        <p class="testimonial__quote">${testimonial.shortQuote}</p>
                         <div class="testimonial__meta">
                             <h3 class="testimonial__name">${testimonial.name}</h3>
                             <p class="testimonial__company">${testimonial.company}</p>
                         </div>
+
+                        <button class="testimonialButton" type="button" data-index="${index}">
+                            Read More
+                        </button>
                     </div>
                 </article>
             `
             )
             .join("");
+
+        const openTestimonialModal = (index) => {
+            const item = testimonials[index];
+            if (!item) return;
+
+            testimonialModalImage.src = item.image;
+            testimonialModalImage.alt = item.name;
+            testimonialModalName.textContent = item.name;
+            testimonialModalCompany.textContent = item.company;
+            testimonialModalText.innerHTML = item.fullQuote;
+
+            testimonialModal.classList.add("show");
+            testimonialModal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-open");
+        };
+
+        const closeTestimonialModal = () => {
+            testimonialModal.classList.remove("show");
+            testimonialModal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lightbox-open");
+        };
+
+        testimonialsGrid.addEventListener("click", (event) => {
+            const button = event.target.closest(".testimonialButton");
+            if (!button) return;
+            openTestimonialModal(Number(button.dataset.index));
+        });
+
+        testimonialModalClose.addEventListener("click", closeTestimonialModal);
+        testimonialModalBackdrop.addEventListener("click", closeTestimonialModal);
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && testimonialModal.classList.contains("show")) {
+                closeTestimonialModal();
+            }
+        });
     }
 
     // portfolio lightbox data

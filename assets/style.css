@@ -380,27 +380,24 @@ span {
 }
 
 .testimonial-card {
-    display: grid;
-    grid-template-columns: 9.2rem 1fr;
-    gap: 1.6rem;
-    align-items: start;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 2rem;
     border-radius: 2rem;
     border: 0.3rem solid var(--accent-colour-2);
     background: var(--background-colour);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    text-align: center;
 }
 
 .testimonial__avatar {
-    width: 15rem;
-    height: 15rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
     overflow: hidden;
     border: 0.25rem solid rgba(1, 214, 183, 0.5);
-    background: linear-gradient(145deg, rgba(1, 214, 183, 0.2), rgba(255, 255, 255, 0.06));
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
+    margin-bottom: 1.5rem;
 }
 
 .testimonial__avatar img {
@@ -410,45 +407,33 @@ span {
     display: block;
 }
 
-.testimonial__avatar span {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--accent-colour);
-    letter-spacing: 0.05em;
-}
-
 .testimonial__content {
-    margin-left: 7rem;
+    width: 100%;
     min-width: 0;
 }
 
 .testimonial__quote {
-    font-size: 1.5rem;
-    line-height: 1.75;
+    font-size: 1.45rem;
+    line-height: 1.7;
     color: #f4f4f4;
-    margin-bottom: 1.6rem;
-}
-
-.testimonial__quote::before {
-    content: "“";
-    color: var(--accent-colour);
-    font-size: 2.6rem;
-    line-height: 0;
-    margin-right: 0.2rem;
-}
-
-.testimonial__quote::after {
-    content: "”";
-    color: var(--accent-colour);
-    font-size: 2.6rem;
-    line-height: 0;
-    margin-right: 0.2rem;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .testimonial__meta {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.quoteMark {
+    color: var(--accent-colour);
+    font-size: 2.6rem;
+    margin: 0 0.4rem;
 }
 
 .testimonial__name {
@@ -460,6 +445,143 @@ span {
 .testimonial__company {
     font-size: 1.35rem;
     opacity: 0.88;
+}
+
+.testimonialButton {
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    background-color: var(--accent-colour);
+    color: var(--background-colour-2);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    transition: 0.5s ease;
+    border: 0.25rem solid var(--accent-colour);
+    cursor: pointer;
+}
+
+.testimonialButton:hover {
+    background-color: var(--background-colour);
+    color: var(--accent-colour);
+}
+
+.modalContainer.testimonialModal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10003;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modalContainer.testimonialModal.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modalContainer.testimonialModal .modal.testimonial {
+    min-width: 75vw;
+    min-height: 75vh;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #2f3e37;
+    border: 1px solid rgba(1, 214, 183, 0.7);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+.modal.testimonial {
+    position: relative;
+    width: min(90vw, 58rem);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 3rem 2.5rem;
+    background: #2f3e37;
+    border: 1px solid rgba(1, 214, 183, 0.7);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    cursor: pointer;
+    color: var(--accent-colour);
+    font-size: 3rem;
+}
+
+.testimonialModalImage {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 0.25rem solid rgba(1, 214, 183, 0.5);
+}
+
+.testimonialModalName {
+    font-size: 2.4rem;
+    color: var(--accent-colour);
+    margin-bottom: 0.5rem;
+}
+
+.testimonialModalCompany {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 1.8rem;
+}
+
+.testimonialModalText {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    white-space: pre-line;
+    text-align: left;
+    width: 95%;
+    flex: 1;
+    width: 95%;
+    overflow-y: auto;
+    padding-right: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.testimonialModalText::-webkit-scrollbar {
+    display: none;
+}
+
+/* Paragraph spacing */
+.testimonialModalText p {
+    margin-bottom: 1rem;
+}
+
+/* Bullet list styling */
+.testimonialModalText ul {
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+
+/* Optional: accent headings inside bullets */
+.testimonialModalText li strong {
+    color: var(--accent-colour);
+}
+
+.testimonialModalText li::marker {
+    color: var(--accent-colour);
 }
 
 .portfolio {
@@ -713,6 +835,7 @@ body.lightbox-open {
     width: fit-content;
     margin: 0 auto;
     padding: 1rem 2rem;
+    margin-bottom: 5rem;
     border-radius: 3rem;
     background-color: var(--accent-colour-2);
     color: var(--text-colour);
@@ -725,7 +848,7 @@ body.lightbox-open {
 }
 
 .experienceLink:hover {
-    background-color: var(--background-colour);
+    background-color: var(--background-colour-2);
     color: var(--accent-colour);
 }
 
@@ -1054,7 +1177,7 @@ input::-webkit-inner-spin-button {
 }
 
 .contact .sendButton:hover {
-    background-color: var(--background-colour);
+    background-color: var(--background-colour-2);
     color: var(--accent-colour);
 }
 
@@ -1085,7 +1208,7 @@ input::-webkit-inner-spin-button {
 }
 
 .contactContent a:hover {
-    background-color: var(--background-colour);
+    background-color: var(--background-colour-2);
     color: var(--accent-colour);
 }
 
@@ -1120,7 +1243,7 @@ input::-webkit-inner-spin-button {
 }
 
 .backToTop a:hover {
-    background-color: var(--background-colour);
+    background-color: var(--background-colour-2);
 }
 
 .backToTop a:hover i {
@@ -1152,9 +1275,11 @@ input::-webkit-inner-spin-button {
     background-color: var(--background-colour-2);
     max-width: 90vw;
     max-height: 90vh;
+    box-sizing: border-box;
     border: 0.25rem solid var(--accent-colour);
     border-radius: 3rem;
     z-index: 200;
+    overflow: hidden;
 }
 
 #largePreview {
@@ -1206,6 +1331,16 @@ input::-webkit-inner-spin-button {
     margin-top: 4rem;
 }
 
+.testimonialModal i,
+.serviceModal i {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+#serviceModalIcon {
+    margin-top: 4rem;
+}
+
 .modalTitle {
     font-size: 3rem;
     padding-bottom: 2rem;
@@ -1217,6 +1352,15 @@ input::-webkit-inner-spin-button {
     max-width: 65vw;
     overflow-y: auto;
     padding: 0 3rem 0 3rem;
+}
+
+.modalButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modalButton i {
@@ -1240,6 +1384,7 @@ input::-webkit-inner-spin-button {
 
 .serviceModal .modalText {
     max-width: 90%;
+    padding-bottom: 5rem;
 }
 
 .serviceModal .modalTitle {
@@ -1628,6 +1773,17 @@ input::-webkit-inner-spin-button {
         text-align: center;
         margin: 0;
     }
+    .testimonial-card {
+        padding: 2.2rem 1.6rem;
+    }
+
+    .testimonial__quote {
+        -webkit-line-clamp: 5;
+    }
+
+    .testimonialModalText {
+        text-align: center;
+    }    
 }
 
 @media (max-width: 520px) {
