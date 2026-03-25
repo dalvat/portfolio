@@ -46,6 +46,7 @@ body {
 
 section {
     min-height: 100vh;
+    min-height: 100dvh;
     padding: 10rem 10% 2rem;
     text-align: left;
 }
@@ -271,17 +272,6 @@ span {
     text-align: center;
 }
 
-.otherServicesContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    height: 100%;
-    padding-bottom: 5rem;
-}
-
 .servicesContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -492,9 +482,13 @@ span {
 
 .modalContainer.testimonialModal .modal.testimonial {
     min-width: 75vw;
+    min-width: 75dvw;
     min-height: 75vh;
+    min-height: 75dvh;
     max-width: 90vw;
+    max-width: 90dvw;
     max-height: 90vh;
+    max-height: 90dvh;
     overflow: hidden;
     box-sizing: border-box;
     background: #2f3e37;
@@ -506,6 +500,7 @@ span {
     position: relative;
     width: min(90vw, 58rem);
     max-height: 90vh;
+    max-height: 90dvh;
     overflow-y: auto;
     padding: 3rem 2.5rem;
     background: #2f3e37;
@@ -556,7 +551,6 @@ span {
     text-align: left;
     width: 95%;
     flex: 1;
-    width: 95%;
     overflow-y: auto;
     padding-right: 1rem;
     scrollbar-width: none;
@@ -916,7 +910,6 @@ body.lightbox-open {
 .timelineStudy {
     display: flex;
     justify-content: center;
-    content: '';
     width: 47%;
     text-align: right;
 }
@@ -936,7 +929,6 @@ body.lightbox-open {
 }
 
 .rightArrow {
-    content: '';
     position: relative;
     top: 1.5rem;
     width: 0;
@@ -947,7 +939,6 @@ body.lightbox-open {
 }
 
 .leftArrow {
-    content: '';
     position: relative;
     top: 1.5rem;
     width: 0;
@@ -958,7 +949,6 @@ body.lightbox-open {
 }
 
 .rightArrowStudy {
-    content: '';
     position: relative;
     top: 1.5rem;
     width: 0;
@@ -969,7 +959,6 @@ body.lightbox-open {
 }
 
 .leftArrowStudy {
-    content: '';
     position: relative;
     top: 1.5rem;
     width: 0;
@@ -1081,10 +1070,6 @@ body.lightbox-open {
 
 .timelineDate.left {
     justify-content: right;
-}
-
-.right.modalText {
-    text-align: right;
 }
 
 .hobbies {
@@ -1277,57 +1262,15 @@ input::-webkit-inner-spin-button {
     align-items: center;
     background-color: var(--background-colour-2);
     max-width: 90vw;
+    max-width: 90dvw;
     max-height: 90vh;
+    max-height: 90dvh;
     box-sizing: border-box;
     border: 0.25rem solid var(--accent-colour);
     border-radius: 3rem;
     z-index: 200;
     overflow: hidden;
-}
-
-#largePreview {
-    max-width: 90vw;
-    max-height: 80vh;
-    padding: 3rem 3rem 0 3rem;
-}
-
-.imgLarge {
-    display: flex;
-    flex-direction: column;
-}
-
-.imgGallery {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#currentImg {
-    width: auto;
-    height: 50vh;
-    padding: 4rem;
-    cursor: pointer;
-}
-
-#nextButton,
-#previousButton {
-    cursor: pointer;
-}
-
-#previousButton:hover i,
-#nextButton:hover i {
-    color: var(--accent-colour);
-    background-color: var(--background-colour);
-}
-
-#previousButton i,
-#nextButton i {
-    color: var(--background-colour-2);
-    background-color: var(--accent-colour);
-    border: 0.25rem solid var(--accent-colour);
-    border-radius: 50%;
-    transition: 0.5s ease;
-    font-size: 4rem;
+    padding-bottom: 5rem;
 }
 
 .modal i {
@@ -1381,19 +1324,6 @@ input::-webkit-inner-spin-button {
     color: var(--accent-colour);
 }
 
-.serviceModal .modal {
-    background-color: var(--background-colour);
-}
-
-.serviceModal .modalText {
-    max-width: 90%;
-    padding-bottom: 5rem;
-}
-
-.serviceModal .modalTitle {
-    color: var(--accent-colour);
-}
-
 .modalContainer.serviceModal {
     position: fixed;
     inset: 0;
@@ -1429,30 +1359,9 @@ input::-webkit-inner-spin-button {
     transform: scale(1);
 }
 
-@keyframes fadeout {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.fadeOut {
-    animation: fadeout 500ms ease;
-}
-
-@keyframes fadein {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.fadeIn {
-    animation: fadein 500ms ease;
+body.modal-open {
+    overflow: hidden;
+    overscroll-behavior: none;
 }
 
 @media (max-width: 1200px) {
@@ -1487,71 +1396,6 @@ input::-webkit-inner-spin-button {
     #currentImg {
         width: 60vw;
         height: auto;
-    }
-}
-
-@media (max-width: 1000px) {
-    .header {
-        padding: 2rem 5%;
-    }
-
-    #toggleMenu {
-        display: block;
-    }
-
-    .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 5%;
-        background: var(--background-colour-2);
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.25);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
-        z-index: 10000;
-    }
-
-    .navbar.active {
-        display: block;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        padding: 2rem;
-    }
-
-    section {
-        padding: 8rem 5% 3rem;
-    }
-
-    .home,
-    .about,
-    .services,
-    .testimonials,
-    .portfolio,
-    .experience,
-    .hobbies,
-    .contact {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .home {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .homeContent,
-    .aboutContent,
-    .servicesContent,
-    .hobbiesContent,
-    .contactContent {
-        width: 100%;
-        max-width: none;
-        margin: 0;
     }
 }
 
@@ -1602,11 +1446,6 @@ input::-webkit-inner-spin-button {
 
     .services h2 {
         margin-top: 2rem;
-    }
-
-    .portfolioContainer {
-        grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 5rem;
     }
 
     .servicesContainer {
@@ -1674,16 +1513,10 @@ input::-webkit-inner-spin-button {
         flex-direction: column;
     }
 
-    .contactContent h3 {
-        margin-left: 0;
-        margin-bottom: 1.5rem;
-    }
-
     .hobbies {
         padding-bottom: 9rem;
     }
 
-    .portfolioContainer,
     .servicesContainer {
         grid-template-columns: 1fr;
     }
@@ -1803,30 +1636,6 @@ input::-webkit-inner-spin-button {
     html {
         font-size: 50%;
     }
-}
-
-html, body {
-    width: 100%;
-    margin: 0;
-    overflow-x: hidden;
-}
-
-.header {
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-}
-
-#toggleMenu {
-    display: none;
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3.6rem;
-    cursor: pointer;
-    color: var(--accent-colour);
-    z-index: 10001;
 }
 
 @media (max-width: 1000px) {

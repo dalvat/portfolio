@@ -52,6 +52,45 @@ document.addEventListener("DOMContentLoaded", () => {
             loop: true,
         });
     }
+
+    // scroll lock helpers
+    let scrollY = 0;
+
+    function lockPageScroll() {
+        scrollY = window.scrollY || window.pageYOffset || 0;
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+        document.body.classList.add("modal-open");
+        document.body.classList.add("lightbox-open");
+    }
+
+    function unlockPageScroll() {
+        const y = scrollY;
+        const html = document.documentElement;
+        const previousScrollBehavior = html.style.scrollBehavior;
+
+        document.body.classList.remove("modal-open");
+        document.body.classList.remove("lightbox-open");
+
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+
+        html.style.scrollBehavior = "auto";
+
+        requestAnimationFrame(() => {
+            window.scrollTo(0, y);
+            document.documentElement.scrollTop = y;
+            document.body.scrollTop = y;
+            html.style.scrollBehavior = previousScrollBehavior;
+        });
+    }
+
     // service lightbox data
     const serviceModal = document.querySelector("#serviceModal");
     const serviceModalIcon = document.querySelector("#serviceModalIcon");
@@ -93,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         serviceModal.setAttribute("aria-hidden", "false");
         serviceModal.classList.add("show");
+        lockPageScroll();
     }
 
     function closeServiceModal() {
@@ -100,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         serviceModal.setAttribute("aria-hidden", "true");
         serviceModal.classList.remove("show");
+        unlockPageScroll();
     }
 
     if (openModalOne) {
@@ -131,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
             closeServiceModal();
         }
     });
+
     // testimonials section
     const testimonials = [
         {
@@ -195,13 +237,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             testimonialModal.classList.add("show");
             testimonialModal.setAttribute("aria-hidden", "false");
-            document.body.classList.add("lightbox-open");
+            lockPageScroll();
         };
 
         const closeTestimonialModal = () => {
             testimonialModal.classList.remove("show");
             testimonialModal.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("lightbox-open");
+            unlockPageScroll();
         };
 
         testimonialsGrid.addEventListener("click", (event) => {
@@ -212,6 +254,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         testimonialModalClose.addEventListener("click", closeTestimonialModal);
         testimonialModalBackdrop.addEventListener("click", closeTestimonialModal);
+        testimonialModal.addEventListener("click", (event) => {
+            if (event.target === testimonialModal) {
+                closeTestimonialModal();
+            }
+});
 
         document.addEventListener("keydown", (event) => {
             if (event.key === "Escape" && testimonialModal.classList.contains("show")) {
@@ -467,7 +514,7 @@ document.addEventListener("DOMContentLoaded", () => {
             renderLightbox();
             lightbox.classList.add("is-open");
             lightbox.setAttribute("aria-hidden", "false");
-            document.body.classList.add("lightbox-open");
+            lockPageScroll();
 
             lightboxClose.focus();
         };
@@ -475,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const closeLightbox = () => {
             lightbox.classList.remove("is-open");
             lightbox.setAttribute("aria-hidden", "true");
-            document.body.classList.remove("lightbox-open");
+            unlockPageScroll();
 
             if (state.focusReturn && typeof state.focusReturn.focus === "function") {
                 state.focusReturn.focus();
