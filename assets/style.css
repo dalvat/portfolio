@@ -412,11 +412,19 @@ span {
     min-width: 0;
 }
 
+.quoteMark {
+    color: var(--accent-colour);
+    font-size: 2.2rem;
+    margin: 0 0.4rem;
+    line-height: 1;
+}
+
 .testimonial__quote {
     font-size: 1.45rem;
-    line-height: 1.7;
+    line-height: 2;
     color: #f4f4f4;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -430,12 +438,6 @@ span {
     margin-bottom: 1.5rem;
 }
 
-.quoteMark {
-    color: var(--accent-colour);
-    font-size: 2.6rem;
-    margin: 0 0.4rem;
-}
-
 .testimonial__name {
     font-size: 1.7rem;
     font-weight: 700;
@@ -445,6 +447,7 @@ span {
 .testimonial__company {
     font-size: 1.35rem;
     opacity: 0.88;
+    margin-bottom: 1.5rem;
 }
 
 .testimonialButton {

@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // testimonials section
     const testimonials = [
         {
-            shortQuote: `<span class="quoteMark">“…</span> From our very first scoping call to final delivery, his work has been outstanding <span class="quoteMark">…”</span>`,
+            shortQuote: `<span class="quoteMark">“</span>From our very first scoping call to final delivery, his work has been outstanding … we wouldn't hesitate to work with David again<span class="quoteMark">”</span>`,
             fullQuote: `
             <p>I recently engaged David to produce high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments—alongside a busy roundabout and inside a Warehouse Facility. From our very first scoping call to final delivery, his work has been outstanding.</p>
             <ul>
@@ -165,18 +165,16 @@ document.addEventListener("DOMContentLoaded", () => {
             .map(
                 (testimonial, index) => `
                 <article class="testimonial-card">
-                    <div class="testimonial__avatar">
-                        <img src="${testimonial.image}" alt="${testimonial.name}" />
-                    </div>
-
-                    <div class="testimonial__content">
-                        <p class="testimonial__quote">${testimonial.shortQuote}</p>
-                        <div class="testimonial__meta">
-                            <h3 class="testimonial__name">${testimonial.name}</h3>
-                            <p class="testimonial__company">${testimonial.company}</p>
-                        </div>
-
-                        <button class="testimonialButton" type="button" data-index="${index}">
+                <div class="testimonial__avatar">
+                    <img src="${testimonial.image}" alt="${testimonial.name}" />
+                </div>
+                <div class="testimonial__content">
+                    <p class="testimonial__quote">${testimonial.shortQuote}</p>
+                    <div class="testimonial__meta">
+                    <h3 class="testimonial__name">${testimonial.name}</h3>
+                    <p class="testimonial__company">${testimonial.company}</p>
+                </div>
+                <button class="testimonialButton" type="button" data-index="${index}">
                             Read More
                         </button>
                     </div>
