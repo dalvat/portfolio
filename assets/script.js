@@ -176,7 +176,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // testimonials section
     const testimonials = [
         {
-            shortQuote: `<span class="quoteMark">“</span>From our very first scoping call to final delivery, his work has been outstanding … we wouldn't hesitate to work with David again<span class="quoteMark">”</span>`,
+            shortQuote: `<span class="quoteMark">“</span>What sets David apart is his exceptional accuracy and attention to detail… his work can be relied upon with confidence in high-stakes contexts.<span class="quoteMark">”</span>`,
+            fullQuote: `
+            <p>I have had the pleasure of working with David since 2014 as my role has developed at the University of Oxford. Including my time as Director of Asset & Space Management, Deputy Director of Estates, and now as Interim Director of Estates. Throughout this long-standing professional relationship, David has consistently provided exceptional support as a CAD specialist.</p>
+            <p>David's work has spanned a wide range of critical outputs, including CAD drawings, mapping, land measurement, land ownership and lease plans, utility layouts, and strategic planning visuals. His contributions have been instrumental in supporting senior-level decision-making across the University's estate.</p>
+            <p>What sets David apart is his exceptional accuracy and attention to detail. This has been particularly vital in the preparation of legal and estate planning documentation, where precision is essential to protect the University's interests in leases, project agreements, other legal documents and formal reporting. I have always found that his work can be relied upon with confidence in high-stakes contexts.</p>
+            <p>David is also highly responsive, consistently delivering high-quality outputs under pressure and often within very tight deadlines. He takes a proactive approach to his work, ensuring requirements are clearly understood from the outset and working independently with minimal oversight.</p>
+            <p>Beyond his technical capabilities, David is a true professional and a pleasure to work with. Over many years, he has built a strong foundation of trust, which continued even after he left the University and relocated abroad. I have been pleased to continue working with him through consultancy arrangements, which speaks volumes about the confidence I have in his abilities.</p>
+            <p>The value David brings is significant — his work has directly supported senior stakeholders at the highest levels of the University, helping to inform and shape strategic estate decisions.</p>
+            <p>I would have no hesitation in highly recommending David to any organisation or individual seeking a skilled, reliable, and professional CAD specialist.</p>`,
+            name: `Iain Critchlow <span class="qualiTag">BA (Hons) MBA MSc</span>`,
+            company: "Interim Director of Estates, University of Oxford",
+            image: "./assets/images/iain_critchlow.jpg",
+        },
+        {
+            shortQuote: `<span class="quoteMark">“</span>From our very first scoping call to final delivery, his work has been outstanding… we wouldn't hesitate to work with David again<span class="quoteMark">”</span>`,
             fullQuote: `
             <p>I recently engaged David to produce high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments—alongside a busy roundabout and inside a Warehouse Facility. From our very first scoping call to final delivery, his work has been outstanding.</p>
             <ul>
@@ -186,8 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </ul>
             <p>In short, we wouldn't hesitate to work with David again or recommend him to anyone needing top-tier visualisation services.</p>
             `,
-            name: "Simon Oliver MEng",
-            company: "Air View Engineering Ltd.",
+            name: `Simon Oliver <span class="qualiTag">MEng</span>`,
+            company: "Co-Founder of Air View Engineering Ltd.",
             image: "./assets/images/simon_oliver.jpg",
         },
     ];
@@ -231,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             testimonialModalImage.src = item.image;
             testimonialModalImage.alt = item.name;
-            testimonialModalName.textContent = item.name;
+            testimonialModalName.innerHTML = item.name;
             testimonialModalCompany.textContent = item.company;
             testimonialModalText.innerHTML = item.fullQuote;
 

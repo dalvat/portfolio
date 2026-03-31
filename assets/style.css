@@ -387,7 +387,8 @@ span {
     border-radius: 50%;
     overflow: hidden;
     border: 0.25rem solid rgba(1, 214, 183, 0.5);
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .testimonial__avatar img {
@@ -409,12 +410,22 @@ span {
     line-height: 1;
 }
 
+.testimonialModalName .qualiTag {
+    color: var(--accent-colour-2);
+    font-size: 1.55rem;
+}
+
+.testimonial__name .qualiTag {
+    color: var(--accent-colour-2);
+    font-size: 1.3rem;
+}
+
 .testimonial__quote {
     font-size: 1.45rem;
     line-height: 2;
     color: #f4f4f4;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -429,7 +440,7 @@ span {
 }
 
 .testimonial__name {
-    font-size: 1.7rem;
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--accent-colour);
 }
@@ -451,6 +462,7 @@ span {
     transition: 0.5s ease;
     border: 0.25rem solid var(--accent-colour);
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .testimonialButton:hover {
@@ -533,7 +545,7 @@ span {
 }
 
 .testimonialModalName {
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: var(--accent-colour);
     margin-bottom: 0.5rem;
 }
@@ -541,7 +553,7 @@ span {
 .testimonialModalCompany {
     font-size: 1.5rem;
     opacity: 0.9;
-    margin-bottom: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .testimonialModalText {
@@ -563,13 +575,15 @@ span {
 
 /* Paragraph spacing */
 .testimonialModalText p {
-    margin-bottom: 1rem;
+    margin-bottom: -1rem;
 }
 
 /* Bullet list styling */
 .testimonialModalText ul {
     padding-left: 2rem;
     list-style-type: disc;
+    margin-top: -2rem;
+    margin-bottom: -2rem;
 }
 
 /* Optional: accent headings inside bullets */
