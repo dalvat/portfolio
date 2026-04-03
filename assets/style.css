@@ -863,6 +863,20 @@ body.lightbox-open {
     color: var(--accent-colour);
 }
 
+.timelineLink {
+    color: var(--accent-colour);
+}
+
+.timelineLink2 {
+    color: var(--study-colour);
+}
+
+.timelineLink:hover,
+.timelineLink2:hover {
+    color: var(--text-colour);
+    text-decoration: underline;
+}
+
 .studyButtonContainer {
     padding: 3rem 0 1.5rem 0;
 }
