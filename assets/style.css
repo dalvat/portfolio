@@ -457,7 +457,7 @@ span {
 
 .toolItem:hover .toolIcon,
 .toolItem:hover span {
-    color: var(--accent-colour);
+    color: var(--text-colour);
 }
 
 .approachCTA {
