@@ -395,7 +395,7 @@ span {
 .approachBox h3 {
     text-align: center;
     padding-left: 0.5rem;
-    color: var(--accent-colour);
+    color: var(--text-colour);
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
 }
