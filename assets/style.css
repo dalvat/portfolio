@@ -390,6 +390,7 @@ span {
     border: 0.3rem solid var(--accent-colour-2);
     height: 100%;
     text-align: center;
+    transition: 0.5s ease;
 }
 
 .approachBox h3 {
@@ -511,7 +512,9 @@ span {
 
 .servicesBox:hover,
 .approachBox:hover {
+    transform: translateY(-4px);
     border-color: var(--accent-colour);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .servicesBox i,
@@ -605,6 +608,13 @@ span {
     background: var(--background-colour-2);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
     text-align: center;
+    transition: 0.5s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-colour);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial__avatar {
@@ -727,8 +737,8 @@ span {
 .modalContainer.testimonialModal .modal.testimonial {
     min-width: 75vw;
     min-width: 75dvw;
-    min-height: 75vh;
-    min-height: 75dvh;
+    min-height: 50vh;
+    min-height: 50dvh;
     max-width: 90vw;
     max-width: 90dvw;
     max-height: 90vh;
@@ -736,7 +746,7 @@ span {
     overflow: hidden;
     box-sizing: border-box;
     background: #2f3e37;
-    border: 1px solid rgba(1, 214, 183, 0.7);
+    border: 1px solid var(--accent-colour);
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
 }
 
@@ -773,7 +783,7 @@ span {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1.5rem;
-    border: 0.25rem solid rgba(1, 214, 183, 0.5);
+    border: 0.25rem solid var(--accent-colour-2);
 }
 
 .testimonialModalName {

@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // testimonials section
     const testimonials = [
         {
-            shortQuote: `<span class="quoteMark">“</span>What sets David apart is his exceptional accuracy and attention to detail… his work can be relied upon with confidence in high-stakes contexts.<span class="quoteMark">”</span>`,
+            shortQuote: `<span class="quoteMark">“</span>What sets David apart is his exceptional accuracy and attention to detail… his work can be relied upon with confidence in high-stakes contexts<span class="quoteMark">”</span>`,
             fullQuote: `
             <p>I have had the pleasure of working with David since 2014 as my role has developed at the University of Oxford. Including my time as Director of Asset & Space Management, Deputy Director of Estates, and now as Interim Director of Estates. Throughout this long-standing professional relationship, David has consistently provided exceptional support as a CAD specialist.</p>
             <p>David's work has spanned a wide range of critical outputs, including CAD drawings, mapping, land measurement, land ownership and lease plans, utility layouts, and strategic planning visuals. His contributions have been instrumental in supporting senior-level decision-making across the University's estate.</p>
@@ -190,7 +190,16 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "./assets/images/iain_critchlow.jpg",
         },
         {
-            shortQuote: `<span class="quoteMark">“</span>From our very first scoping call to final delivery, his work has been outstanding… we wouldn't hesitate to work with David again<span class="quoteMark">”</span>`,
+            shortQuote: `<span class="quoteMark">“</span>His attention to detail and accuracy are 10/10 ... the real difference is his proactive nature to solve problems and overcome technical challenges<span class="quoteMark">”</span>`,
+            fullQuote: `
+            <p>David worked alongside my team on numerous occasions on global-scale sporting event projects - his attention to detail and accuracy are 10/10, but the real difference is David's proactive nature to also help solve problems and overcome CAD technical challenges.</p>
+            <p>I would highly recommend David to anyone who needs 3D modelling and visualisation produced to high standards.</p>`,
+            name: `Mark Pawley`,
+            company: "Digital Twin Delivery Director, OnePlan Ltd.",
+            image: "./assets/images/mark_pawley.jpg",
+        },
+        {
+            shortQuote: `<span class="quoteMark">“</span>From our very first scoping call to final delivery, his work has been outstanding … we wouldn't hesitate to work with David again<span class="quoteMark">”</span>`,
             fullQuote: `
             <p>I recently engaged David to produce high-fidelity CAD models and photorealistic renders of our Direct Air Capture system in two contrasting environments—alongside a busy roundabout and inside a Warehouse Facility. From our very first scoping call to final delivery, his work has been outstanding.</p>
             <ul>
